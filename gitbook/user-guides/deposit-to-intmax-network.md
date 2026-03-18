@@ -1,24 +1,37 @@
-# Deposit to INTMAX Network
+---
+icon: circle-play
+description: INTMAX Network へのトークン Deposit 手順
+---
 
-You can transfer assets from the Ethereum mainnet to the INTMAX network. You can deposit any token as long as it complies with the ERC20/ERC721/ERC1155 standards. It takes about 30 minutes for the deposit to be reflected.
+# INTMAX Network への Deposit
 
-## Procedure
+Ethereum メインネットから INTMAX Network へ資産を移動できます。ERC-20 / ERC-721 / ERC-1155 に準拠したトークンであれば、どのトークンでも Deposit 可能です。Deposit が反映されるまで約 30 分かかります。
 
-1. **Select Your Deposit Amount:**
-   Unlike the mining page, there are no preset options. You can input any amount of ETH you wish to deposit.
-2. **(optional) Input Your INTMAX Address:**
-   Input your INTMAX address into the "To INTMAX address" field.
-   Go to your account page and copy your INTMAX address.
-3. **Click the "Deposit" Button:**
-   Once all information is inputted, the "Deposit" button will become clickable.
+## 手順
+
+1. **Deposit する金額を入力**
+
+   マイニングページとは異なり、プリセットの選択肢はありません。Deposit したい任意の ETH 額を入力できます。
+
+2. **（任意）INTMAX アドレスを入力**
+
+   「To INTMAX address」フィールドに送信先の INTMAX アドレスを入力します。
+   アカウントページから自分の INTMAX アドレスをコピーできます。
+
+3. **「Deposit」ボタンをクリック**
+
+   すべての情報を入力すると、「Deposit」ボタンがクリック可能になります。
 
 ![Deposit to INTMAX Network](assets/user-guides/deposit_to_intmax_network_10.webp)
 
-4. **Confirm and Execute the Transaction:**
-   You will be prompted to sign, so please approve it.
-   During the first 15 seconds of processing, keep your browser open and do not close the window.
-5. **Wait for Confirmation:**
-   Wait until the transaction finishes. Once completed, your mining process has successfully begun.
+4. **トランザクションの確認と実行**
+
+   署名を求められるので、承認してください。
+   処理開始から最初の 15 秒間はブラウザを開いたままにし、ウィンドウを閉じないでください。
+
+5. **完了を待つ**
+
+   トランザクションが完了するまでお待ちください。完了すると、Deposit が正常に処理されたことになります。
 
 <figure>
   <img src="assets/user-guides/deposit_to_intmax_network_20.webp" alt="Deposit to INTMAX Network" />

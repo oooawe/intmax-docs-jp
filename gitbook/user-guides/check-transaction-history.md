@@ -1,30 +1,32 @@
-# Check Transaction History
+---
+icon: clock-rotate-left
+description: トランザクション履歴の確認方法
+---
 
-This page allows you to view your transaction history.
+# トランザクション履歴の確認
+
+このページでは、トランザクション履歴を確認できます。
 
 ![Check Transaction History](assets/user-guides/check_transaction_history.webp)
 
-## Transaction History Overview
+## トランザクション履歴の概要
 
-You can **filter** the transaction list by category for easier browsing.
-**Your history is private** — other users cannot see it.
+トランザクション一覧をカテゴリで**フィルター**して、目的の履歴を見つけやすくできます。
+**履歴はプライベート**であり、他のユーザーからは閲覧できません。
 
-When you press the **"Share"** button:
+**「Share」**ボタンを押すと：
 
-- A **private link** is created.
-- Only the person you share it with can **view the transaction details**.
+- **プライベートリンク**が作成されます。
+- 共有した相手だけがトランザクションの詳細を**閲覧**できます。
 
-## Transaction Types
+## トランザクションの種類
 
-Here are the four categories shown:
+以下の 4 つのカテゴリが表示されます：
 
-- **Deposit:** Token is moved **from Ethereum Mainnet → INTMAX network**.
+- **Deposit** — Ethereum メインネットから INTMAX Network へトークンを移動
+- **Withdraw** — INTMAX Network から Ethereum メインネットへトークンを移動
+- **Send** — 他の INTMAX アドレスへトークンを送信
+- **Receive** — 他の INTMAX アドレスからトークンを受信
 
-- **Withdraw:** Token is moved **from INTMAX network → Ethereum Mainnet**.
-
-- **Send:** Token is sent **to another INTMAX address**.
-
-- **Receive:** Token is received **from another INTMAX address**.
-
-> **NOTE**: The **mining transaction list** is not shown here.
-> To view mining history, go to the [Mining Portfolio](https://app.intmax.io/mining-portfolio) page.
+> **注意**：**マイニングのトランザクション一覧**はここには表示されません。
+> マイニング履歴は [Mining Portfolio](https://app.intmax.io/mining-portfolio) ページで確認してください。

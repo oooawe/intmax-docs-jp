@@ -1,35 +1,47 @@
-# Withdrawal from INTMAX Network
+---
+icon: circle-play
+description: INTMAX Network からのトークン Withdrawal 手順
+---
 
-You can transfer assets from the INTMAX network to the Ethereum Mainnet. A transfer fee and withdrawal fee on the INTMAX network are required when withdrawing. It takes about 6 hours for the withdrawal to be reflected.
+# INTMAX Network からの Withdrawal
 
-## Procedure
+INTMAX Network から Ethereum メインネットへ資産を移動できます。Withdrawal の際には、INTMAX Network 上の Transfer 手数料と Withdrawal 手数料が必要です。Withdrawal が反映されるまで約 6 時間かかります。
 
-1. **Specify Token and Amount:**
-   Select the type of token you want to withdraw and enter the amount.
-2. **Enter Withdrawal Address:**
-   Provide the Ethereum address where you want the tokens to be sent.
-3. **Click "Withdraw":**
-   After specifying the token, amount, and address, click the "Withdraw" button.
+## 手順
+
+1. **トークンの種類と金額を指定**
+
+   Withdrawal するトークンの種類を選択し、金額を入力します。
+
+2. **Withdrawal 先のアドレスを入力**
+
+   トークンの送信先となる Ethereum アドレスを入力します。
+
+3. **「Withdraw」をクリック**
+
+   トークン、金額、アドレスを指定したら、「Withdraw」ボタンをクリックします。
 
 ![Withdraw from INTMAX Network](assets/user-guides/withdrawal_from_intmax_network_10.webp)
 
-4. **Confirm the Transaction:**
-   Review the details on the Confirm page. If everything looks correct, click "Withdraw" button again to proceed.
+4. **トランザクションの確認**
+
+   確認ページで詳細を確認し、問題がなければ再度「Withdraw」ボタンをクリックして実行します。
 
 ![Withdraw from INTMAX Network](assets/user-guides/withdrawal_from_intmax_network_20.webp)
 
-5. **Wait for the Transaction to Process:**
-   During the waiting screen, do not close your browser for at least the first 2 minutes to ensure the transaction processes smoothly.
+5. **処理の完了を待つ**
 
-### ETH, USDC, and WBTC Withdrawals
+   待機画面が表示されている間、トランザクションがスムーズに処理されるよう、最初の 2 分間はブラウザを閉じないでください。
 
-When withdrawing ETH, USDC or WBTC, the token will be automatically received into the specified withdrawal address.
+### ETH・USDC・WBTC の Withdrawal
+
+ETH、USDC、WBTC を Withdrawal する場合、指定した Withdrawal 先アドレスにトークンが自動的に届きます。
 
 ![Withdraw from INTMAX Network](assets/user-guides/withdrawal_from_intmax_network_30.webp)
 
-### Withdrawals for Other Tokens
+### その他のトークンの Withdrawal
 
-For tokens other than ETH, USDC, and WBTC, a claim process is required. To execute this transaction, you need the token on the Ethereum Mainnet.
+ETH、USDC、WBTC 以外のトークンでは、Claim（請求）処理が必要です。このトランザクションを実行するには、Ethereum メインネット上にトークンが必要です。
 
 <figure>
   <img src="assets/user-guides/withdrawal_from_intmax_network_40.webp" alt="Withdraw from INTMAX Network" />

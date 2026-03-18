@@ -1,33 +1,46 @@
-# Transfer on INTMAX Network
+---
+icon: circle-play
+description: INTMAX Network 上でのトークン Transfer 手順
+---
 
-On the Send page, you can transfer tokens on INTMAX to other users. Transaction details are encrypted, so only the sender and recipient know the amount and destination of the transfer. With INTMAX, you can send tokens or NFTs in bulk to up to 63 addresses at the same time, saving on network fees.
-The following is a detailed explanation of how to transfer tokens on the INTMAX network.
+# INTMAX Network での Transfer
 
-## Procedure
+Send ページでは、INTMAX 上のトークンを他のユーザーに Transfer できます。トランザクションの詳細は暗号化されるため、送金額や送信先を知ることができるのは送信者と受信者だけです。INTMAX では、最大 63 件の宛先にトークンや NFT を一括送信でき、ネットワーク手数料を節約できます。
 
-1. **Specify Token and Amount:**
-   Select the type of token you want to send and enter the amount. If you want to send NFTs, switch to the appropriate tab at the top of the page. You will see a list of all NFTs you own. Select the NFT you’d like to send, then enter the quantity and the recipient’s address. Once done, proceed as instructed above.
-2. **Enter the Recipient's INTMAX Address:**
-   Paste the INTMAX address of the recipient to whom you want to send the tokens.
+以下では、INTMAX Network 上でトークンを Transfer する手順を詳しく説明します。
+
+## 手順
+
+1. **トークンの種類と金額を指定**
+
+   送信するトークンの種類を選択し、金額を入力します。NFT を送信する場合は、ページ上部のタブを切り替えてください。所有する NFT の一覧が表示されるので、送信したい NFT を選択し、数量と送信先アドレスを入力してから、上記の手順に従って進めます。
+
+2. **送信先の INTMAX アドレスを入力**
+
+   トークンを送りたい相手の INTMAX アドレスを貼り付けます。
 
 ![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_10.webp)
 
-3. **Add Additional Recipients (Optional):**
-   If you want to send tokens to multiple recipients, click the "Add" button to include additional token transfers.
+3. **宛先の追加（任意）**
+
+   複数の宛先にトークンを送信したい場合は、「Add」ボタンをクリックして送信先を追加します。
 
 ![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_20.webp)
 
-4. **Click "Send" Button:**
-   Once all recipients and amounts are specified, click the "Send" button.
+4. **「Send」ボタンをクリック**
+
+   すべての宛先と金額を指定したら、「Send」ボタンをクリックします。
 
 ![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_30.webp)
 
-5. **Confirm the Transaction Details:**
-   On the confirmation page, review all the details. If everything is correct, click "Send" button again to proceed.
+5. **トランザクション内容の確認**
+
+   確認ページで詳細を確認し、問題がなければ再度「Send」ボタンをクリックして実行します。
 
 ![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_40.webp)
 
-6. **Wait for Processing:**
-   Do not close your browser for at least the first 1 minute while the transaction is being processed. After completion, your tokens will have been sent successfully.
+6. **処理の完了を待つ**
+
+   トランザクション処理中は、最初の 1 分間はブラウザを閉じないでください。処理が完了すると、トークンの送信は正常に完了しています。
 
 ![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_50.webp)
