@@ -1,35 +1,40 @@
-# Integration Guide
+---
+icon: puzzle-piece
+description: intmax2-client-sdk と intmax2-server-sdk による INTMAX ネットワーク統合の実践ガイド
+---
 
-This document provides a practical guide for integrating with the INTMAX network using the **intmax2-client-sdk and intmax2-server-sdk**, complete with real code examples.
+# 統合ガイド
 
-Each section covers key steps—from SDK installation and client initialization to login, token deposits and withdrawals, transaction history retrieval, and signature verification—enabling developers to build applications that leverage INTMAX’s privacy-preserving features with ease.
+本ドキュメントでは、**intmax2-client-sdk** と **intmax2-server-sdk** を使用した INTMAX ネットワークとの統合について、実際のコード例を交えた実践ガイドを提供します。
 
-By following the examples in order, you’ll gain an intuitive understanding of how to effectively use the INTMAX SDK in real-world scenarios.
+各セクションでは、SDK のインストールとクライアント初期化からログイン、トークンの Deposit・Withdrawal、トランザクション履歴の取得、署名検証まで、主要なステップを網羅しています。これにより、INTMAX のプライバシー保護機能を活用したアプリケーションを容易に構築できます。
 
-**Complete Documentation**
+例を順に追うことで、実際の開発シナリオにおける INTMAX SDK の効果的な使い方を直感的に理解できます。
 
-For comprehensive documentation and additional resources, visit:
+**関連ドキュメント**
 
-[View Client SDK Overview](./overview.md)
+包括的なドキュメントとリソースについてはこちらを参照してください：
 
-# Getting Started with intmax2-client-sdk
+[Client SDK 概要を見る](./overview.md)
 
-This guide provides step-by-step examples for using the `intmax2-client-sdk` to interact with the INTMAX network. This SDK is primarily intended for use in **frontend applications**. It covers everything from setting up the client, performing login, to managing deposits, withdrawals, and transaction histories.
+# intmax2-client-sdk をはじめる
 
-For the complete example code, please visit our GitHub repository:
+このガイドでは、`intmax2-client-sdk` を使用して INTMAX ネットワークとやり取りするためのステップバイステップの例を示します。この SDK は主に**フロントエンドアプリケーション**での使用を想定しています。クライアントのセットアップ、ログイン、Deposit・Withdrawal・トランザクション履歴の管理まですべてを網羅しています。
 
-[View Vite Example on Github](https://github.com/InternetMaximalism/intmax2-client-sdk/tree/main/examples/vite)
+完全なサンプルコードは GitHub リポジトリを参照してください：
 
-## Example: Vite + React + TypeScript
+[Vite サンプルを GitHub で見る](https://github.com/InternetMaximalism/intmax2-client-sdk/tree/main/examples/vite)
+
+## 例: Vite + React + TypeScript
 
 ```bash
 npm create vite@latest my-app # Select React and TypeScript
 cd my-app
 ```
 
-### Installation
+### インストール
 
-Install the SDK using your preferred package manager:
+任意のパッケージマネージャーで SDK をインストールします：
 
 ```bash
 # npm
@@ -42,9 +47,9 @@ yarn add intmax2-client-sdk
 pnpm i intmax2-client-sdk
 ```
 
-### State Variables
+### ステート変数
 
-A lightweight React hook for initializing, authenticating, and tearing down an INTMAX client. First, define the required state variables.
+INTMAX クライアントの初期化、認証、破棄を行う軽量な React フックです。まず、必要なステート変数を定義します。
 
 ```tsx
 import { useState } from "react";
@@ -61,16 +66,16 @@ export const useIntMaxClient = () => {
 };
 ```
 
-| **Variable** | **Purpose**                                      |
+| **変数** | **用途** |
 | ------------ | ------------------------------------------------ |
-| client       | Holds the instantiated **IntMaxClient** or null. |
-| isLoggedIn   | true once the user has successfully logged in.   |
-| loading      | true while any async action is running.          |
-| error        | Last error message; null when there is none.     |
+| client       | インスタンス化された **IntMaxClient** または null を保持 |
+| isLoggedIn   | ユーザーのログインが成功すると true |
+| loading      | 非同期処理の実行中は true |
+| error        | 最後のエラーメッセージ。エラーがなければ null |
 
-### Initiate Intmax Client
+### INTMAX Client の初期化
 
-Creates a new Testnet client and stores it in state.
+新しい Testnet クライアントを作成し、ステートに保存します。
 
 ```tsx
 import { useCallback } from "react";
@@ -96,9 +101,9 @@ const initializeClient = useCallback(async () => {
 }, []);
 ```
 
-### Log In / Account Recovery
+### ログイン / アカウントリカバリー
 
-Creates (or recovers) the user’s INTMAX account and flips isLoggedIn to true.
+ユーザーの INTMAX アカウントを作成（またはリカバリー）し、isLoggedIn を true に切り替えます。
 
 ```tsx
 const login = useCallback(async () => {
@@ -122,9 +127,9 @@ const login = useCallback(async () => {
 }, [client]);
 ```
 
-### Log Out / Session Reset
+### ログアウト / セッションリセット
 
-Clears login status locally and invalidates the session on the server.
+ログイン状態をローカルでクリアし、サーバー上のセッションを無効化します。
 
 ```tsx
 const logout = useCallback(async () => {
@@ -145,9 +150,9 @@ const logout = useCallback(async () => {
 }, [client]);
 ```
 
-### Put Together
+### まとめ
 
-The following code is a complete hook:
+以下は完全なフックのコードです：
 
 ```tsx
 // hooks/useIntMaxClient.tsx
@@ -228,7 +233,7 @@ export const useIntMaxClient = () => {
 };
 ```
 
-The following React component demonstrates how to use the useIntMaxClient hook to manage the INTMAX client within your application.
+以下の React コンポーネントは、useIntMaxClient フックを使用してアプリケーション内で INTMAX クライアントを管理する方法を示しています。
 
 ```tsx
 // App.tsx
@@ -289,23 +294,23 @@ function App() {
 export default App;
 ```
 
-### What’s Next
+### 次のステップ
 
-The **intmax2-client-sdk** also provides functions for deposits, withdrawals, transfers, and querying transaction history. For full details, please refer to the SDK documentation.
+**intmax2-client-sdk** では、Deposit・Withdrawal・Transfer やトランザクション履歴の取得機能も提供しています。詳細は SDK のドキュメントを参照してください。
 
-[View Client SDK Reference](./overview.md)
+[Client SDK リファレンスを見る](./overview.md)
 
-## Example: NextJS + TypeScript
+## 例: Next.js + TypeScript
 
-Use `create-next-app` to generate a boilerplate for a Next.js application.
+`create-next-app` を使用して Next.js アプリケーションのボイラープレートを生成します。
 
-Example command:
+コマンド例：
 
 ```bash
 npx create-next-app@latest my-app
 ```
 
-When creating a project with `create-next-app`, please select the option to disable **Turbopack**.
+`create-next-app` でプロジェクトを作成する際、**Turbopack** を無効にするオプションを選択してください。
 
 ```
 ✔ Would you like to use TypeScript? … No / Yes <- Select "Yes"
@@ -316,13 +321,13 @@ When creating a project with `create-next-app`, please select the option to disa
 ? Would you like to use Turbopack for `next dev`? › No / Yes <- Select "No"
 ```
 
-Other settings are optional. Once all configurations are complete, move into the project directory.
+その他の設定は任意です。すべての設定が完了したら、プロジェクトディレクトリに移動します。
 
 ```bash
 cd my-app
 ```
 
-Please modify the `next.config.ts` file located in the project root as follows:
+プロジェクトルートにある `next.config.ts` ファイルを以下のように変更してください：
 
 ```tsx
 import type { NextConfig } from "next";
@@ -344,9 +349,9 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 ```
 
-### Installation
+### インストール
 
-Install the SDK using your preferred package manager:
+任意のパッケージマネージャーで SDK をインストールします：
 
 ```bash
 # npm
@@ -359,9 +364,9 @@ yarn add intmax2-client-sdk
 pnpm i intmax2-client-sdk
 ```
 
-### State Variables
+### ステート変数
 
-A lightweight React hook for initializing, authenticating, and tearing down an INTMAX client. First, define the required state variables.
+INTMAX クライアントの初期化、認証、破棄を行う軽量な React フックです。まず、必要なステート変数を定義します。
 
 ```tsx
 import { useState } from "react";
@@ -378,16 +383,16 @@ export const useIntMaxClient = () => {
 };
 ```
 
-| **Variable** | **Purpose**                                      |
+| **変数** | **用途** |
 | ------------ | ------------------------------------------------ |
-| client       | Holds the instantiated **IntMaxClient** or null. |
-| isLoggedIn   | true once the user has successfully logged in.   |
-| loading      | true while any async action is running.          |
-| error        | Last error message; null when there is none.     |
+| client       | インスタンス化された **IntMaxClient** または null を保持 |
+| isLoggedIn   | ユーザーのログインが成功すると true |
+| loading      | 非同期処理の実行中は true |
+| error        | 最後のエラーメッセージ。エラーがなければ null |
 
-### Initiate Intmax Client
+### INTMAX Client の初期化
 
-Creates a new Testnet client and stores it in state.
+新しい Testnet クライアントを作成し、ステートに保存します。
 
 ```tsx
 import { useCallback } from "react";
@@ -413,9 +418,9 @@ const initializeClient = useCallback(async () => {
 }, []);
 ```
 
-### Log In / Account Recovery
+### ログイン / アカウントリカバリー
 
-Creates (or recovers) the user’s INTMAX account and flips isLoggedIn to true.
+ユーザーの INTMAX アカウントを作成（またはリカバリー）し、isLoggedIn を true に切り替えます。
 
 ```tsx
 const login = useCallback(async () => {
@@ -439,9 +444,9 @@ const login = useCallback(async () => {
 }, [client]);
 ```
 
-### Log Out / Session Reset
+### ログアウト / セッションリセット
 
-Clears login status locally and invalidates the session on the server.
+ログイン状態をローカルでクリアし、サーバー上のセッションを無効化します。
 
 ```tsx
 const logout = useCallback(async () => {
@@ -462,9 +467,9 @@ const logout = useCallback(async () => {
 }, [client]);
 ```
 
-### Put Together
+### まとめ
 
-The following code is a complete hook:
+以下は完全なフックのコードです：
 
 ```tsx
 // src/hooks/useIntMaxClient.tsx
@@ -545,7 +550,7 @@ export const useIntMaxClient = () => {
 };
 ```
 
-The following React component demonstrates how to use the useIntMaxClient hook to manage the INTMAX client within your application.
+以下の React コンポーネントは、useIntMaxClient フックを使用してアプリケーション内で INTMAX クライアントを管理する方法を示しています。
 
 ```tsx
 // src/app/page.tsx
@@ -622,17 +627,17 @@ default export function Home() {
 }
 ```
 
-### What’s Next
+### 次のステップ
 
-The **intmax2-client-sdk** also provides functions for deposits, withdrawals, transfers, and querying transaction history. For full details, please refer to the SDK documentation.
+**intmax2-client-sdk** では、Deposit・Withdrawal・Transfer やトランザクション履歴の取得機能も提供しています。詳細は SDK のドキュメントを参照してください。
 
-[INTMAX Client SDK Docs](./api-reference.md)
+[INTMAX Client SDK ドキュメント](./api-reference.md)
 
-# How to Use intmax2-server-sdk
+# intmax2-server-sdk の使い方
 
-This guide provides step-by-step examples for using the `intmax2-server-sdk` to interact with the INTMAX network. This SDK is primarily intended for use in **server-side applications** or when writing simple scripts. It covers everything from setting up the client, performing login, to managing deposits, withdrawals, and transaction histories.
+このガイドでは、`intmax2-server-sdk` を使用して INTMAX ネットワークとやり取りするためのステップバイステップの例を示します。この SDK は主に**サーバーサイドアプリケーション**やシンプルなスクリプトの作成を想定しています。クライアントのセットアップ、ログイン、Deposit・Withdrawal・トランザクション履歴の管理まですべてを網羅しています。
 
-## Example: NodeJS (TypeScript)
+## 例: Node.js (TypeScript)
 
 ```bash
 mkdir my-app
@@ -642,9 +647,9 @@ npm i --save-dev typescript tsx
 npm i dotenv
 ```
 
-### Installation
+### インストール
 
-Install the SDK using your preferred package manager:
+任意のパッケージマネージャーで SDK をインストールします：
 
 ```bash
 # npm
@@ -657,9 +662,9 @@ yarn add intmax2-server-sdk
 pnpm i intmax2-server-sdk
 ```
 
-### Initiate INTMAX Client
+### INTMAX Client の初期化
 
-`INTMAXClient` is a core component of the INTMAX SDK that provides seamless interaction with the INTMAX network. This class simplifies the process of integrating applications with the INTMAX network, enabling developers to interact with both the `mainnet` and `testnet` environments effortlessly.
+`INTMAXClient` は INTMAX SDK のコアコンポーネントで、INTMAX ネットワークとのシームレスな連携を提供します。このクラスにより、INTMAX ネットワークとのアプリケーション統合が簡素化され、`mainnet` と `testnet` の両環境で容易に連携できます。
 
 ```tsx
 import { IntMaxNodeClient } from "intmax2-server-sdk";
@@ -675,31 +680,30 @@ const client = new IntMaxNodeClient({
 });
 ```
 
-- `environment` (String): The network environment to use (e.g., `testnet` or `mainnet`)
-- `eth_private_key` (String): Ethereum private key used for signing transactions
-- `l1_rpc_url` (String): RPC endpoint URL for Ethereum (e.g., Infura or Alchemy)
+- `environment`（String）：使用するネットワーク環境（例：`testnet` または `mainnet`）
+- `eth_private_key`（String）：トランザクション署名に使用する Ethereum の秘密鍵（Private Key）
+- `l1_rpc_url`（String）：Ethereum の RPC エンドポイント URL（例：Infura または Alchemy）
 
-### Log In / Account Recovery
+### ログイン / アカウントリカバリー
 
-To use other functions in the SDK, it is essential to first log in and retrieve the token balances.
-This ensures that the client is synchronized with the user’s current account state.
+SDK の他の機能を使用するには、まずログインしてトークン残高を取得する必要があります。これにより、クライアントがユーザーの現在のアカウント状態と同期されます。
 
 ```tsx
 await client.login();
 const { balances } = await client.fetchTokenBalances();
 ```
 
-### Log Out / Session Reset
+### ログアウト / セッションリセット
 
-Clears login status locally and invalidates the session on the server.
+ログイン状態をローカルでクリアし、サーバー上のセッションを無効化します。
 
 ```tsx
 await client.logout();
 ```
 
-### Put Together
+### まとめ
 
-By using the code below, you have gained access to your account information and balance.
+以下のコードにより、アカウント情報と残高にアクセスできます。
 
 ```tsx
 import { IntMaxNodeClient } from "intmax2-server-sdk";
@@ -728,11 +732,11 @@ main()
   });
 ```
 
-### Environment Variables
+### 環境変数
 
-Please specify your `ETH_PRIVATE_KEY` or the Ethereum private key you intend to use.
+使用する Ethereum の秘密鍵を `ETH_PRIVATE_KEY` に指定してください。
 
-For `L1_RPC_URL`, if you are using a testnet, specify one that can connect to the Sepolia network.
+`L1_RPC_URL` には、テストネットを使用する場合、Sepolia ネットワークに接続可能なものを指定してください。
 
 ```bash
 # .env
@@ -740,18 +744,18 @@ ETH_PRIVATE_KEY="0x..."
 L1_RPC_URL="https://sepolia.gateway.tenderly.co"
 ```
 
-Once you’ve set the environment variables, you can run the following command.
+環境変数を設定したら、以下のコマンドで実行できます。
 
 ```bash
 npx tsx src/index.ts
 ```
 
-### **What’s Next**
+### 次のステップ
 
-The **intmax2-server-sdk** also provides functions for deposits, withdrawals, transfers, and querying transaction history. For full details, please refer to the SDK documentation.
+**intmax2-server-sdk** では、Deposit・Withdrawal・Transfer やトランザクション履歴の取得機能も提供しています。詳細は SDK のドキュメントを参照してください。
 
-[View Client SDK Reference](./overview.md)
+[Client SDK リファレンスを見る](./overview.md)
 
-## Tips: How to Run a Local Balance Prover
+## Tips: ローカル Balance Prover の実行方法
 
-To set up a local Balance Prover instance, please see Tips: [How to Run a Local Balance Prover](https://github.com/InternetMaximalism/intmax2-client-sdk/blob/main/README.md#tips-how-to-run-a-local-balance-prover)
+ローカル Balance Prover のセットアップについては、Tips: [How to Run a Local Balance Prover](https://github.com/InternetMaximalism/intmax2-client-sdk/blob/main/README.md#tips-how-to-run-a-local-balance-prover) を参照してください。

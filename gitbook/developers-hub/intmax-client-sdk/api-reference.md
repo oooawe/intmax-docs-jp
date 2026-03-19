@@ -1,34 +1,35 @@
-# API Reference
+---
+icon: book-open
+description: INTMAX Client SDK の全プロパティ・メソッド・パラメータ・戻り値の詳細リファレンス
+---
 
-Comprehensive API reference for the INTMAX Client SDK, including detailed descriptions of properties, methods, parameters, return values, and usage examples for account management, transactions, deposits, withdrawals, fees, and more.
+# API リファレンス
 
-### Properties
+INTMAX Client SDK の包括的な API リファレンスです。プロパティ、メソッド、パラメータ、戻り値、使用例の詳細な説明を含み、アカウント管理、トランザクション、Deposit、Withdrawal、手数料などを網羅しています。
+
+### プロパティ
 
 #### `isLoggedIn: boolean`
 
-This property indicates the current authentication state of the wallet user. It returns true when a user has successfully completed the authentication process and has an active session. This is crucial for determining whether sensitive operations like transactions or data access can be performed.
+ウォレットユーザーの現在の認証状態を示すプロパティです。ユーザーが認証プロセスを正常に完了し、アクティブなセッションを持っている場合に true を返します。トランザクションやデータアクセスなど、機密性の高い操作を実行できるかどうかの判定に重要です。
 
 #### `address: string`
 
-This `address`, which corresponds one-to-one with the connected wallet's Ethereum address, represents the address **on the INTMAX network**.
+接続されたウォレットの Ethereum アドレスと1対1で対応する、**INTMAX ネットワーク上のアドレス**を表します。
 
 #### `tokenBalances: TokenBalance[] | undefine`
 
-Represents the user's current token balances, including token address, balance, symbol, decimals, and name. If undefined, the balances are not yet available.
+ユーザーの現在のトークン残高を表します。トークンアドレス、残高、シンボル、小数桁数、名前を含みます。undefined の場合、残高はまだ取得されていません。
 
-## Functions
+## 関数
 
-This section describes all available functions and methods provided by the `IntMaxClient` SDK.
-Each function includes a detailed explanation of its purpose, parameters, return values,
-and usage examples. These APIs allow developers to perform account management, transactions,
-and deposit/withdrawal operations directly with the INTMAX network.
+このセクションでは、`IntMaxClient` SDK が提供するすべての関数とメソッドを説明します。各関数には、目的、パラメータ、戻り値、使用例の詳細な説明が含まれています。これらの API により、INTMAX ネットワークに対するアカウント管理、トランザクション、Deposit・Withdrawal 操作を直接行えます。
 
-All methods are asynchronous unless otherwise specified and are designed to handle
-secure cryptographic operations via WebAssembly for optimal performance.
+特に指定がない限り、すべてのメソッドは非同期です。WebAssembly を介した安全な暗号演算により、最適なパフォーマンスを実現するよう設計されています。
 
-### Initialization
+### 初期化
 
-`IntMaxClient` is a core component of the INTMAX SDK that provides seamless interaction with the INTMAX network. Please specify either **testnet** or **mainnet** for the environment.
+`IntMaxClient` は INTMAX SDK のコアコンポーネントで、INTMAX ネットワークとのシームレスな連携を提供します。environment には **testnet** または **mainnet** を指定してください。
 
 ```tsx
 import { IntMaxClient } from "intmax2-client-sdk";
@@ -36,17 +37,17 @@ import { IntMaxClient } from "intmax2-client-sdk";
 const intMaxClient = IntMaxClient.init({ environment: "mainnet" });
 ```
 
-To set up a local Balance Prover instance, please see Tips: [How to Run a Local Balance Prover](https://github.com/InternetMaximalism/intmax2-client-sdk/blob/main/README.md#tips-how-to-run-a-local-balance-prover)
+ローカル Balance Prover のセットアップについては、Tips: [How to Run a Local Balance Prover](https://github.com/InternetMaximalism/intmax2-client-sdk/blob/main/README.md#tips-how-to-run-a-local-balance-prover) を参照してください。
 
-### Account
+### アカウント
 
-The Account module provides comprehensive authentication and cryptographic operations for wallet management.
+アカウントモジュールは、ウォレット管理のための包括的な認証機能と暗号演算を提供します。
 
 #### `login`
 
-Initiates wallet authentication and establishes a secure session. This method handles key derivation, session token management, and initial data synchronization. It is essential for secure access to protected wallet functionalities.
+ウォレットの認証を開始し、安全なセッションを確立します。このメソッドは鍵導出、セッショントークン管理、初期データ同期を処理します。ウォレットの保護された機能への安全なアクセスに不可欠です。
 
-[**Q.** What is “Login” in the context of the INTMAX network?](./faq#q-what-is-login-in-the-context-of-the-intmax-network)
+[**Q.** INTMAX ネットワークにおける「ログイン」とは？](./faq#q-what-is-login-in-the-context-of-the-intmax-network)
 
 ```tsx
 const loginResponse: LoginResponse = await client.login();
@@ -61,19 +62,19 @@ const loginResponse: LoginResponse = await client.login();
 }
 ```
 
-**Advanced Feature:**
+**高度な機能：**
 
-The `nonce` and `encryptionKey` can be used to protect a private key, enabling its recovery without needing external wallet signatures on subsequent uses. Using this feature is optional.
+`nonce` と `encryptionKey` を使用して秘密鍵（Private Key）を保護し、以降の使用時に外部ウォレットの署名（Signature）なしでリカバリーを可能にできます。この機能の使用は任意です。
 
-The `encryptionKey` is a 32-byte string suitable for use as the key in AES-GCM encryption, and it is output as a Base64-encoded string.
+`encryptionKey` は AES-GCM 暗号化のキーとして使用できる 32 バイトの文字列で、Base64 エンコードされた文字列として出力されます。
 
-A `nonce` is a value related to the generation of an encryption key. The same nonce will always produce the same encryptionKey.
+`nonce` は暗号化キーの生成に関連する値です。同じ nonce は常に同じ encryptionKey を生成します。
 
-The value of the `encryptionKey` is derived from a fixed message signed by an external wallet and the nonce value. If there is a risk of the encryptionKey being compromised, you can generate a new encryption key by updating the nonce.
+`encryptionKey` の値は、外部ウォレットによって署名された固定メッセージと nonce 値から導出されます。encryptionKey が漏洩するリスクがある場合は、nonce を更新して新しい暗号化キーを生成できます。
 
 #### `logout`
 
-Securely terminates the current wallet session and clears sensitive data from memory. This method ensures proper cleanup of authentication tokens, cached data, and any active connections. Critical for maintaining security when the user is finished with their wallet operations.
+現在のウォレットセッションを安全に終了し、メモリから機密データをクリアします。このメソッドは認証トークン、キャッシュデータ、アクティブな接続の適切なクリーンアップを保証します。ウォレット操作の終了時にセキュリティを維持するために重要です。
 
 ```tsx
 const res: void = await client.logout();
@@ -81,7 +82,7 @@ const res: void = await client.logout();
 
 #### `getPrivateKey`
 
-Securely retrieves the INTMAX private key required for signing operations when necessary. This can be used if the user wishes to back up their **INTMAX private key.** Transaction signing and decryption of transaction history can still be performed without executing this function.
+署名操作に必要な場合に、INTMAX の秘密鍵を安全に取得します。ユーザーが **INTMAX の秘密鍵をバックアップ**したい場合に使用できます。この関数を実行しなくても、トランザクションの署名やトランザクション履歴の復号は引き続き可能です。
 
 ```tsx
 const privateKey: string = await client.getPrivateKey(); // will return hex string of private key
@@ -89,7 +90,7 @@ const privateKey: string = await client.getPrivateKey(); // will return hex stri
 
 #### `signMessage`
 
-Signs a message using an INTMAX account. This function signs the provided message, which can be any arbitrary string.
+INTMAX アカウントを使用してメッセージに署名します。この関数は、任意の文字列であるメッセージに対して署名を行います。
 
 ```tsx
 const message = "Hello, World!";
@@ -104,11 +105,11 @@ const signature: SignMessageResponse = await client.signMessage(message);
 ];
 ```
 
-**Note**: The signature is computed deterministically. This means that signing the same message with the same account will always produce the same signature.
+**注意**: 署名は決定論的に計算されます。つまり、同じアカウントで同じメッセージに署名すると、常に同じ署名が生成されます。
 
 #### `verifySignature`
 
-Verifies a signature generated using the `signMessage` function to ensure it matches the original message and INTMAX account.
+`signMessage` 関数で生成された署名を検証し、元のメッセージと INTMAX アカウントに一致することを確認します。
 
 ```tsx
 const signature = [
@@ -127,36 +128,34 @@ const isVerified: boolean = await client.verifySignature(signature, message);
 await intMaxClient.sync();
 ```
 
-The `sync` function updates the user’s balance to the latest state.
-On the INTMAX network, a user’s balance must be refreshed before transfers or withdrawals.
+`sync` 関数は、ユーザーの残高を最新の状態に更新します。INTMAX ネットワークでは、Transfer や Withdrawal を行う前にユーザーの残高を更新する必要があります。
 
-However, in the **frontend**, this function should not be called manually in normal use.
-When an instance of `IntMaxClient` is created, the `sync` function is automatically executed in the background at regular intervals.
+ただし、**フロントエンド**では通常、この関数を手動で呼び出す必要はありません。`IntMaxClient` のインスタンスが作成されると、`sync` 関数はバックグラウンドで定期的に自動実行されます。
 
-**Important:**
+**重要：**
 
-* ⚠️ In the **frontend**, The `sync` function should not be called manually in normal use.
-* ⚠️ Be aware that multiple `sync` calls cannot run concurrently — if called at the same time, one of them will fail.
-* ✅ However, if you create two separate IntMaxClient instances with different private keys, it is safe to call their sync functions concurrently.
+* ⚠️ **フロントエンド**では、`sync` 関数を通常の使用で手動呼び出ししないでください。
+* ⚠️ 複数の `sync` 呼び出しは同時実行できません — 同時に呼び出された場合、いずれかが失敗します。
+* ✅ ただし、異なる秘密鍵で 2 つの別々の IntMaxClient インスタンスを作成した場合、それぞれの sync 関数を同時に呼び出すことは安全です。
 
 #### `updateL1RpcUrl`
 
-You can customize the RPC URL of the Ethereum (Sepolia) network used when executing a deposit transaction.
+Deposit トランザクション実行時に使用する Ethereum（Sepolia）ネットワークの RPC URL をカスタマイズできます。
 
 ```tsx
 const newL1RpcUrl = "https://new-rpc-url.com";
 intMaxClient.updateL1RpcUrl(newL1RpcUrl);
 ```
 
-### Token
+### トークン
 
-This SDK manages cryptocurrency and digital asset information within the wallet ecosystem.
+この SDK は、ウォレットエコシステム内の暗号資産やデジタルアセットの情報を管理します。
 
-[Q. What are `tokenList` and `tokenBalances`](./faq#q-what-are-tokenlist-and-tokenbalances)
+[Q. `tokenList` と `tokenBalances` とは？](./faq#q-what-are-tokenlist-and-tokenbalances)
 
 #### `getTokensList`
 
-This API retrieves a list of tokens. The `tokenIndex` parameter is particularly important as it is used to specify tokens in operations such as deposits, withdrawals, and transfers. This allows precise identification of tokens within the INTMAX Client SDK.
+トークンの一覧を取得する API です。`tokenIndex` パラメータは、Deposit・Withdrawal・Transfer などの操作でトークンを指定する際に特に重要です。これにより、INTMAX Client SDK 内でトークンを正確に識別できます。
 
 ```tsx
 const tokens: Token[] = await client.getTokensList();
@@ -176,7 +175,7 @@ const tokens: Token[] = await client.getTokensList();
 
 #### `fetchTokenBalances`
 
-Retrieves all token balances held by the currently logged-in INTMAX account. This is useful for displaying the user’s asset holdings within an application.
+現在ログイン中の INTMAX アカウントが保有するすべてのトークン残高を取得します。アプリケーション内でユーザーの資産保有状況を表示する際に便利です。
 
 ```tsx
 const tokenBalances: TokenBalancesResponse = await client.fetchTokenBalances();
@@ -199,15 +198,15 @@ const tokenBalances: TokenBalancesResponse = await client.fetchTokenBalances();
 }
 ```
 
-### Transaction
+### トランザクション
 
-A transfer is made within the INTMAX network by executing a transaction on the network's transfer mechanism. It supports ETH, ERC20, ERC721, and ERC1155 tokens.
+INTMAX ネットワーク内の Transfer メカニズムでトランザクションを実行することで、ネットワーク内での Transfer が行われます。ETH、ERC-20、ERC-721、ERC-1155 トークンに対応しています。
 
 #### `fetchTransfers`
 
-This function retrieves the history of tokens received by the user, including details like amount, sender (`from`), recipient (`to`), status, timestamp, and token information.
+ユーザーが受信したトークンの履歴を取得します。金額、送信者（`from`）、受信者（`to`）、ステータス、タイムスタンプ、トークン情報などの詳細が含まれます。
 
-[Q. What is the difference between a transfer and a transaction?](./faq#q-what-is-the-difference-between-a-transfer-and-a-transaction)
+[Q. Transfer とトランザクションの違いは？](./faq#q-what-is-the-difference-between-a-transfer-and-a-transaction)
 
 ```tsx
 const transferList: FetchTransactionsResponse = await fetchTransfers({})
@@ -242,11 +241,11 @@ const transferList: FetchTransactionsResponse = await fetchTransfers({})
 
 #### `fetchTransactions`
 
-This function retrieves the history of tokens sent by the user. Each transaction may include multiple transfers to different recipients, including the payment of fees.
+ユーザーが送信したトークンの履歴を取得します。各トランザクションには、異なる受信者への複数の Transfer と手数料の支払いが含まれる場合があります。
 
-For details about the differences between transactions and transfers, please refer to the FAQ below.
+トランザクションと Transfer の違いについては、以下の FAQ を参照してください。
 
-[Q. What is the difference between a transfer and a transaction?](./faq#q-what-is-the-difference-between-a-transfer-and-a-transaction)
+[Q. Transfer とトランザクションの違いは？](./faq#q-what-is-the-difference-between-a-transfer-and-a-transaction)
 
 ```tsx
 const transactionList: FetchTransactionsResponse = await fetchTransactions({})
@@ -285,13 +284,13 @@ const transactionList: FetchTransactionsResponse = await fetchTransactions({})
 
 #### `broadcastTransaction`
 
-The `broadcastTransaction` function broadcasts one or more transactions to the blockchain network. It accepts an array of transaction parameters, such as recipient addresses, transfer amounts, and token types. After broadcasting the transactions, the function verifies the root of the transaction tree and waits for confirmation. The response includes transaction results containing the confirmation status, block number, and other relevant information.
+`broadcastTransaction` 関数は、1つ以上のトランザクションをブロックチェーンネットワークにブロードキャストします。受信者アドレス、送金額、トークンタイプなどのトランザクションパラメータの配列を受け取ります。トランザクションのブロードキャスト後、トランザクションツリーのルートを検証し、確認を待ちます。レスポンスには、確認ステータス、ブロック番号などの関連情報を含むトランザクション結果が含まれます。
 
-You can specify multiple transactions in a single call — up to a maximum of **63 transactions**.
+1回の呼び出しで最大 **63 トランザクション**まで指定できます。
 
-- [Q. How are transaction fees determined on the INTMAX network?](./faq#q-how-are-transaction-fees-determined-on-the-intmax-network)
-- [Q. What happens to transaction fees when multiple transactions are batched together?](./faq#q-what-happens-to-transaction-fees-when-multiple-transactions-are-batched-together)
-- [Q. How do you use the return value of `broadcastTransaction`?](./faq#q-how-do-we-use-the-return-value-of-broadcasttransaction-and-withdraw)
+- [Q. INTMAX ネットワークのトランザクション手数料はどのように決まりますか？](./faq#q-how-are-transaction-fees-determined-on-the-intmax-network)
+- [Q. 複数のトランザクションをバッチ処理した場合、手数料はどうなりますか？](./faq#q-what-happens-to-transaction-fees-when-multiple-transactions-are-batched-together)
+- [Q. `broadcastTransaction` の戻り値はどのように使いますか？](./faq#q-how-do-we-use-the-return-value-of-broadcasttransaction-and-withdraw)
 
 ```tsx
 const params: BroadcastTransactionRequest[] = [
@@ -323,17 +322,15 @@ const transferResult = await client.broadcastTransaction(params, isWithdrawal);
 
 #### `waitForTransactionConfirmation`
 
-The `waitForTransactionConfirmation` function is used to verify whether a transfer has been fully finalized after execution.
-On the INTMAX network, transactions are submitted to nodes using the `broadcastTransaction` function and then processed.
+`waitForTransactionConfirmation` 関数は、Transfer の実行後にトランザクションが完全にファイナライズされたかどうかを検証するために使用します。INTMAX ネットワークでは、トランザクションは `broadcastTransaction` 関数を使用してノードに送信され、その後処理されます。
 
-The success response of `broadcastTransaction` alone does not guarantee on-chain finalization.
-Therefore, the `waitForTransactionConfirmation` function provides a reliable way to track the transaction until its status becomes either `success` or `failed`.
+`broadcastTransaction` の成功レスポンスだけでは、オンチェーンでのファイナライズを保証しません。そのため、`waitForTransactionConfirmation` 関数は、トランザクションのステータスが `success` または `failed` になるまで追跡する信頼性の高い方法を提供します。
 
-**Important:**
+**重要：**
 
-* ⚠️ It is important to call `waitForTransactionConfirmation` after executing a transfer transaction.
+* ⚠️ Transfer トランザクションの実行後に `waitForTransactionConfirmation` を呼び出すことが重要です。
 
-**NOTE**: This function can also be used with the `txTreeRoot` of the `withdraw` function. However, since the transaction is already reflected on-chain once the `withdraw` function has finished executing, there is no need to use this function to wait any further.
+**注意**: この関数は `withdraw` 関数の `txTreeRoot` でも使用できます。ただし、`withdraw` 関数の実行が完了した時点でトランザクションは既にオンチェーンに反映されているため、この関数でさらに待機する必要はありません。
 
 ```ts
 const txTreeRoot = "0x52146f411e84ccba11e0887a0780a558f41042300a1515c7ff2cb7e1dd8b8c77";
@@ -342,11 +339,11 @@ const transferConfirmation = await client.waitForTransactionConfirmation({ txTre
 
 ### Deposit
 
-A deposit is made from Ethereum mainnet to the INTMAX network by executing a transaction on the liquidity contract of Ethereum mainnet. It supports ETH, ERC20, ERC721, and ERC1155 tokens.
+Ethereum メインネットから INTMAX ネットワークへの Deposit は、Ethereum メインネットの Liquidity Contract 上でトランザクションを実行することで行われます。ETH、ERC-20、ERC-721、ERC-1155 トークンに対応しています。
 
 #### `fetchDeposits`
 
-Retrieves a paginated list of deposit transactions with all associated details, such as amount, sender, recipient, status, timestamp, and token information. This method provides comprehensive data for tracking and managing deposits, enabling users to monitor transaction status and history efficiently.
+Deposit トランザクションのページネーション付きリストを、金額、送信者、受信者、ステータス、タイムスタンプ、トークン情報などの関連する詳細とともに取得します。このメソッドは、Deposit の追跡と管理のための包括的なデータを提供し、ユーザーがトランザクションのステータスと履歴を効率的に確認できるようにします。
 
 ```tsx
 const depositList: Transaction[] = await client.fetchDeposits({})[
@@ -369,12 +366,11 @@ const depositList: Transaction[] = await client.fetchDeposits({})[
 
 #### `deposit`
 
-Processes a deposit transaction to the user's account with all required transaction parameters. This method handles the complete deposit flow including validation, signing, broadcasting to the network — **and includes an on-chain AML (Anti-Money Laundering) check via a Predicate Contract**.
+必要なトランザクションパラメータを使用して、ユーザーのアカウントへの Deposit トランザクションを処理します。このメソッドは、バリデーション、署名、ネットワークへのブロードキャストを含む完全な Deposit フローを処理し、**Predicate Contract を介したオンチェーン AML（Anti-Money Laundering）チェック**を含みます。
 
-Here, `estimateDepositGas` is necessary to validate whether there is enough gas available for the transaction in advance.
+ここで、`estimateDepositGas` はトランザクションに十分なガスがあるかを事前に検証するために必要です。
 
-The `deposit` function returns both the txHash and the status.
-`status: 1` represents Processing, and `status: 2` represents Completed.
+`deposit` 関数は txHash と status の両方を返します。`status: 1` は処理中、`status: 2` は完了を表します。
 
 ```tsx
 const params: PrepareDepositTransactionRequest = {
@@ -409,11 +405,11 @@ const deposit: PrepareDepositTransactionResponse = await client.deposit(params);
 
 ### Withdrawal
 
-A withdrawal is made from the INTMAX network to Ethereum mainnet by executing a transaction on the liquidity contract of the mainnet. It supports ETH, ERC20, ERC721, and ERC1155 tokens.
+INTMAX ネットワークから Ethereum メインネットへの Withdrawal は、メインネットの Liquidity Contract 上でトランザクションを実行することで行われます。ETH、ERC-20、ERC-721、ERC-1155 トークンに対応しています。
 
 #### `fetchWithdrawal`
 
-Organizes withdrawal transactions into categorized lists based on their current status, including Failed, NeedClaim, Relayed, Requested, and Success states. This structured organization enables efficient filtering and management of withdrawals, allowing users to track transaction progress and handle different withdrawal states separately. Each status category maintains an array of ContractWithdrawal objects containing detailed transaction information.
+Withdrawal トランザクションを、現在のステータスに基づいてカテゴリ別のリストに整理します。Failed、NeedClaim、Relayed、Requested、Success の各状態が含まれます。この構造化された整理により、Withdrawal の効率的なフィルタリングと管理が可能になり、ユーザーはトランザクションの進行状況を追跡し、各 Withdrawal 状態を個別に処理できます。各ステータスカテゴリには、詳細なトランザクション情報を含む ContractWithdrawal オブジェクトの配列が格納されます。
 
 ```tsx
 const withdrawals = await client.fetchWithdrawals();
@@ -453,9 +449,9 @@ const withdrawals = await client.fetchWithdrawals();
 
 #### `withdraw`
 
-The `withdraw` function is an asynchronous method that processes a withdrawal request from the user's wallet. This function performs comprehensive validation and security checks to ensure the withdrawal is handled safely and accurately. It follows the entire withdrawal flow, including verifying the user's balance, calculating transaction fees, and signing the transaction.
+`withdraw` 関数は、ユーザーのウォレットからの Withdrawal リクエストを処理する非同期メソッドです。この関数は、Withdrawal が安全かつ正確に処理されるよう、包括的なバリデーションとセキュリティチェックを実行します。残高の検証、トランザクション手数料の計算、トランザクションの署名を含む、Withdrawal フロー全体を実行します。
 
-As with the `broadcastTransaction` function, after executing the `withdraw` function, you can use the `waitForTransactionConfirmation` function to wait until the transaction is finalized.
+`broadcastTransaction` 関数と同様に、`withdraw` 関数の実行後に `waitForTransactionConfirmation` 関数を使用してトランザクションのファイナライズを待つことができます。
 
 ```tsx
 
@@ -486,9 +482,9 @@ const withdrawResult = await client.withdraw(params);
 
 #### `claimWithdrawal`
 
-Initiates the claim process for one or more withdrawal transactions, returning a response containing the transaction hash and status. After execution of this function completes, the progress of the claim operation can be tracked to confirm its success on the blockchain.
+1つ以上の Withdrawal トランザクションの Claim プロセスを開始し、トランザクションハッシュとステータスを含むレスポンスを返します。この関数の実行完了後、ブロックチェーン上での成功を確認するために Claim 操作の進行状況を追跡できます。
 
-[Q. What is `claimWithdrawal`?](./faq#q-what-is-claimwithdrawal)
+[Q. `claimWithdrawal` とは？](./faq#q-what-is-claimwithdrawal)
 
 ```tsx
 // The withdrawal will be processed in approximately three hours
@@ -501,43 +497,43 @@ const claim = await client.claimWithdrawal(withdrawals.need_claim);
 }
 ```
 
-**NOTE**: When there are no tokens available to claim, the error `No withdrawals to claim` occurs.
+**注意**: Claim 可能なトークンがない場合、`No withdrawals to claim` エラーが発生します。
 
-## Technical Terms
+## 技術用語
 
-- **Nullifier**: A unique identifier used to prevent the same deposit/withdrawal from being used more than once.
-- **Salt**: A random value added during encryption or hashing to ensure different outputs from identical inputs. Used to conceal the recipient's deposit address.
-- **Token index**: A numerical ID uniquely identifying tokens within the INTMAX network.
+- **Nullifier** — 同一の Deposit / Withdrawal が二重使用されるのを防ぐための一意な識別子
+- **Salt** — 暗号化やハッシュ処理時に追加されるランダム値。同一の入力から異なる出力を生成するために使用され、受信者の Deposit アドレスを秘匿する
+- **Token index** — INTMAX ネットワーク内でトークンを一意に識別する数値 ID
 
-## Batch Size Limits
+## バッチサイズの制限
 
-The INTMAX Client SDK enforces batch size limits for certain operations to ensure optimal performance and prevent resource exhaustion:
+INTMAX Client SDK は、最適なパフォーマンスの確保とリソース枯渇の防止のため、特定の操作にバッチサイズの制限を設けています：
 
-### Transaction Broadcasting
+### トランザクションのブロードキャスト
 
-- **Maximum transactions per `broadcastTransaction` call**: 63 transactions
-- This limit applies when batching multiple transfers in a single transaction broadcast
+- **`broadcastTransaction` 1回あたりの最大トランザクション数**: 63
+- この制限は、1回のトランザクションブロードキャストで複数の Transfer をバッチ処理する場合に適用されます
 
-### Data Fetching Operations
+### データ取得操作
 
-- **Maximum items per internal API request**: 64 items
-- This limit applies to internal pagination used by:
+- **内部 API リクエストあたりの最大アイテム数**: 64
+- この制限は以下の関数が使用する内部ページネーションに適用されます：
   - `fetchDeposits()`
   - `fetchTransfers()`
   - `fetchTransactions()`
-- The SDK automatically handles pagination, so you don't need to manage this limit when using high-level APIs
-- Specifying a value greater than 64 will result in an error: `Limit exceeds max batch size` or `Batch size exceeds maximum limit of 64`
+- SDK がページネーションを自動処理するため、高レベル API の使用時にこの制限を管理する必要はありません
+- 64 を超える値を指定すると、`Limit exceeds max batch size` または `Batch size exceeds maximum limit of 64` エラーが発生します
 
-## Fee
+## 手数料
 
-Please refer to the following for details about the fees.
+手数料の詳細については以下を参照してください。
 
-- [Q. How are transaction fees determined on the INTMAX network?](./faq#q-how-are-transaction-fees-determined-on-the-intmax-network)
-- [Q. What is the collateral fee?](./faq#q-what-is-the-collateral-fee)
+- [Q. INTMAX ネットワークのトランザクション手数料はどのように決まりますか？](./faq#q-how-are-transaction-fees-determined-on-the-intmax-network)
+- [Q. コラテラル手数料（collateral fee）とは？](./faq#q-what-is-the-collateral-fee)
 
 #### `getTransferFee`
 
-The getTransferFee function estimates the transaction fee required to perform a token transfer within the INTMAX network.
+getTransferFee 関数は、INTMAX ネットワーク内でのトークン Transfer に必要なトランザクション手数料を見積もります。
 
 ```tsx
 const trasnferFee: FeeResponse = await client.getTransferFee();
@@ -558,7 +554,7 @@ const trasnferFee: FeeResponse = await client.getTransferFee();
 
 #### `getWithdrawalFee`
 
-This function estimates the transaction fee required to perform a token withdrawal within the INTMAX network.
+INTMAX ネットワーク内でのトークン Withdrawal に必要なトランザクション手数料を見積もります。
 
 ```tsx
 const withdrawalFee: FeeResponse = await client.getWithdrawalFee();
