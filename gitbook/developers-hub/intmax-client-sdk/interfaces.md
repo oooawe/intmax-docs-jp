@@ -1,8 +1,13 @@
-# Interfaces
+---
+icon: brackets-curly
+description: INTMAX Client SDK のインターフェース定義と型仕様
+---
 
-The `IntMaxClient` is an SDK interface designed for interacting with the INTMAX network. This interface provides essential features such as account management, transaction operations, deposits, and withdrawals. Below is an overview of each functionality.
+# インターフェース
 
-This interface offers high-level APIs for seamless integration with the INTMAX network. It integrates account login/logout, transaction management, and deposit/withdrawal processing, allowing developers to execute complex blockchain operations through simple functions. Additionally, with WebAssembly support, it ensures fast and secure processing.
+`IntMaxClient` は、INTMAX ネットワークと連携するために設計された SDK インターフェースです。アカウント管理、トランザクション操作、Deposit、Withdrawal といった主要機能を提供します。以下に各機能の概要を示します。
+
+このインターフェースは、INTMAX ネットワークとのシームレスな統合のための高レベル API を提供します。アカウントのログイン・ログアウト、トランザクション管理、Deposit・Withdrawal 処理を統合し、シンプルな関数で複雑なブロックチェーン操作を実行できます。また、WebAssembly のサポートにより、高速かつ安全な処理を実現します。
 
 ```tsx
 export interface INTMAXClient {
@@ -60,11 +65,11 @@ export interface INTMAXClient {
 }
 ```
 
-### Function List Overview
+### 関数一覧の概要
 
-The **Function List** outlines key properties and interfaces of the INTMAX Client SDK, enabling seamless user authentication, token balance management, and interaction with the INTMAX network. It provides clear and standardized methods for handling authentication states, token information, and paginated data retrieval to ensure efficient integration and extensibility across different use cases.
+**関数一覧** は、INTMAX Client SDK の主要なプロパティとインターフェースを示しています。ユーザー認証、トークン残高管理、INTMAX ネットワークとの連携をシームレスに行えます。認証状態、トークン情報、ページネーション付きデータ取得のための明確で標準化されたメソッドにより、さまざまなユースケースでの効率的な統合と拡張性を実現します。
 
-### Basic Interfaces
+### 基本インターフェース
 
 ```tsx
 // Enum defining supported token types in the INTMAX ecosystem
@@ -122,7 +127,7 @@ export interface Token {
 }
 ```
 
-### Request Interfaces(Token, Transaction, Deposit)
+### リクエストインターフェース（Token・Transaction・Deposit）
 
 ```tsx
 // Type representing a message signature in INTMAX format
@@ -190,7 +195,7 @@ export interface Transfer {
   recipient: string; // Address receiving the transfer
   tokenIndex: number; // Index of the token being transferred
   amount: string; // Amount being transferred as string
-  salt: string; // Random salt used to conceal the recipient’s address for privacy protection
+  salt: string; // Random salt used to conceal the recipient's address for privacy protection
   to?: string; // Final destination address (if different from recipient)
   isWithdrawal?: boolean; // Flag indicating if this is a withdrawal operation
   nullifier?: string; // Unique identifier preventing double-spending
@@ -227,7 +232,7 @@ export interface PrepareDepositTransactionResponse {
 }
 ```
 
-### Request Interfaces(Withdrawal)
+### リクエストインターフェース（Withdrawal）
 
 ```tsx
 export type PaginationCursor = {

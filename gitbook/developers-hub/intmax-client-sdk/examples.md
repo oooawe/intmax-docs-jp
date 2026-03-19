@@ -1,18 +1,23 @@
-# Examples
+---
+icon: code
+description: INTMAX Client SDK のブラウザ・Node.js 環境別コード例
+---
 
-Practical code examples for using the INTMAX Client SDK in both browser and Node.js environments. Demonstrates account initialization, authentication, balance retrieval, token management, transaction execution, deposits, withdrawals, fee estimation, and message signing/verification.
+# 使用例
 
-### Usage for browser
+INTMAX Client SDK をブラウザおよび Node.js 環境で使用するための実践的なコード例です。アカウントの初期化、認証、残高取得、トークン管理、トランザクション実行、Deposit、Withdrawal、ガス代の見積もり、メッセージの署名・検証を扱います。
 
-We plan to provide JavaScript support for the following modules. Below, you will find examples for each module.
+### ブラウザでの使用
+
+以下のモジュールについて JavaScript サポートを提供予定です。各モジュールの使用例を示します。
 
 ```bash
 npm i intmax2-client-sdk
 ```
 
-#### Initiate INTMAX Client
+#### INTMAX Client の初期化
 
-`IntMaxClient` is a core component of the INTMAX SDK that provides seamless interaction with the INTMAX network. This class simplifies the process of integrating applications with the INTMAX network, enabling developers to interact with both the `mainnet` and `testnet` environments effortlessly.
+`IntMaxClient` は INTMAX SDK のコアコンポーネントで、INTMAX ネットワークとのシームレスな連携を提供します。このクラスにより、INTMAX ネットワークとのアプリケーション統合が簡素化され、`mainnet` と `testnet` の両環境で容易に連携できます。
 
 ```tsx
 import { IntMaxClient } from "intmax-client-sdk";
@@ -20,37 +25,37 @@ import { IntMaxClient } from "intmax-client-sdk";
 const client = await IntMaxClient.init({ environment: "mainnet" });
 ```
 
-To set up a local Balance Prover instance, please see Tips: [How to Run a Local Balance Prover](https://github.com/InternetMaximalism/intmax2-client-sdk/blob/main/README.md#tips-how-to-run-a-local-balance-prover)
+ローカルに Balance Prover インスタンスをセットアップする場合は、Tips: [How to Run a Local Balance Prover](https://github.com/InternetMaximalism/intmax2-client-sdk/blob/main/README.md#tips-how-to-run-a-local-balance-prover) を参照してください。
 
-#### Login to INTMAX Network
+#### INTMAX Network へのログイン
 
-Here is an example of logging in to INTMAX. Users need to login once before using the SDK functions.
+INTMAX へのログイン例です。SDK の各機能を使用する前に、一度ログインする必要があります。
 
-You should sign two message, they will be appeared in the popup window automatically:
+2 つのメッセージに署名します。ポップアップウィンドウに自動的に表示されます：
 
-1. Sign the message confirm your ETH wallet address.
+1. ETH ウォレットアドレスを確認するメッセージに署名
 
-2. Sign the message with challenge string.
+2. チャレンジ文字列を含むメッセージに署名
 
 ```tsx
 await client.login();
 ```
 
-#### Retrieve Balance
+#### 残高の取得
 
-This example retrieves the balances of the generated INTMAX account.
+生成された INTMAX アカウントの残高を取得する例です。
 
 ```tsx
 const { balances } = await client.fetchTokenBalances();
 ```
 
-### Usage for Node.js
+### Node.js での使用
 
 ```bash
 npm i intmax2-server-sdk
 ```
 
-#### Initiate INTMAX Client
+#### INTMAX Client の初期化
 
 ```tsx
 import { IntMaxNodeClient } from "intmax2-server-sdk";
@@ -62,29 +67,29 @@ const client = new IntMaxNodeClient({
 });
 ```
 
-#### Login to INTMAX Network & Retrieve Balance
+#### INTMAX Network へのログインと残高取得
 
-Here is an example of logging in to INTMAX and retrieving balances. Users need to retrieve their balances once before using the SDK functions.
+INTMAX へのログインと残高取得の例です。SDK の各機能を使用する前に、一度残高を取得する必要があります。
 
 ```tsx
 await client.login();
 const { balances } = await client.fetchTokenBalances();
 ```
 
-### Usage for both
+### 共通の使用例
 
-#### Retrieve INTMAX Account Address & Private Key
+#### INTMAX アカウントのアドレスと秘密鍵の取得
 
-This example retrieves the address and private key of the generated INTMAX account.
+生成された INTMAX アカウントのアドレスと秘密鍵（Private Key）を取得する例です。
 
 ```tsx
 const address = client.address; // Address of the INTMAX account
 const privateKey = client.getPrivateKey(); // Private key of the INTMAX account
 ```
 
-#### Sign & Verify Message
+#### メッセージの署名と検証
 
-Demonstrates how to sign a message twice and verify the signature.
+メッセージに署名し、その署名（Signature）を検証する方法を示します。
 
 ```tsx
 const message = "Hello, World!";
@@ -97,9 +102,9 @@ if (!isVerified) {
 console.log("Verification succeeded");
 ```
 
-#### List Available Tokens & Retrieve Information for a Specific Token
+#### 利用可能なトークンの一覧と特定トークン情報の取得
 
-Shows how to get the list of tokens supported by the network.
+ネットワークでサポートされているトークンの一覧を取得する方法です。
 
 ```tsx
 const tokens = await client.getTokensList();
@@ -110,9 +115,9 @@ const nativeToken = tokens.find(
 );
 ```
 
-#### Fetch Transaction History
+#### トランザクション履歴の取得
 
-Retrieves deposits, transfers, and sent transactions in parallel, then prints the latest entries.
+Deposit、Transfer、送信済みトランザクションを並列で取得し、最新のエントリを表示します。
 
 ```tsx
 const [deposits, transfers, sentTxs] = await Promise.all([
@@ -126,9 +131,9 @@ console.log("Received Transfers:", transfers);
 console.log("Sent Transfers:", sentTxs);
 ```
 
-#### Estimate Gas & Deposit
+#### ガス代の見積もりと Deposit
 
-Estimates gas for an ETH deposit and submits the deposit.
+ETH の Deposit に必要なガス代を見積もり、Deposit を実行します。
 
 ```tsx
 const token = {
@@ -158,11 +163,11 @@ console.log("Deposit result:", depositResult);
 console.log("Transaction Hash:", depositResult.txHash);
 ```
 
-The final txHash obtained can be searched on [SepoliaScan](https://sepolia.etherscan.io/).
+取得した txHash は [SepoliaScan](https://sepolia.etherscan.io/) で検索できます。
 
-#### Check Transfer Fee & Broadcast Transaction
+#### Transfer 手数料の確認とトランザクションのブロードキャスト
 
-This example retrieves the current transfer fee (token index / amount). Then it sends 0.000001 ETH to another INTMAX address.
+現在の Transfer 手数料（トークンインデックス / 金額）を取得する例です。その後、0.000001 ETH を別の INTMAX アドレスに送信します。
 
 ```tsx
 const token = {
@@ -191,11 +196,11 @@ const transferConfirmation = await client.waitForTransactionConfirmation(transfe
 console.log("Transfer confirmation result:", transferConfirmation);
 ```
 
-#### Retrieve Withdrawal Fee & Execute Withdrawal
+#### Withdrawal 手数料の取得と Withdrawal の実行
 
-This example shows how to fetch both withdrawal and transfer fees before withdrawing.
+Withdrawal 手数料と Transfer 手数料の両方を取得してから Withdrawal を実行する方法を示します。
 
-Then, it performs an ETH withdrawal, then claims it once the proof is ready.
+ETH の Withdrawal を実行し、プルーフの準備が完了したら Claim します。
 
 ```tsx
 const token = {
@@ -231,24 +236,24 @@ const claim = await client.claimWithdrawal(withdrawals.need_claim);
 console.log("Claim result:", claim);
 ```
 
-### Notes for Using NodeJS
+### Node.js 使用時の注意事項
 
-When using the server-sdk, it is recommended to run the `sync` function before and after calling the `broadcastTransaction` and `withdraw` functions.
+server-sdk を使用する場合、`broadcastTransaction` と `withdraw` 関数の呼び出し前後に `sync` 関数を実行することを推奨します。
 
-* **Without calling `sync`:**
-  Your balance will still be updated automatically before the next transfer or withdrawal, but this automatic update may take extra time.
+* **`sync` を呼び出さない場合:**
+  次の Transfer や Withdrawal の前に残高は自動的に更新されますが、この自動更新には追加の時間がかかる場合があります。
 
-* **By calling `sync` in advance:**
-  Your balance is already updated, so transfers and withdrawals can start faster.
+* **事前に `sync` を呼び出す場合:**
+  残高がすでに更新されているため、Transfer や Withdrawal をより速く開始できます。
 
-* **After a transfer:**
-  Running `sync` ensures your balance reflects the completed transaction, making your next transfer smoother.
+* **Transfer の後:**
+  `sync` を実行すると、完了したトランザクションが残高に反映され、次の Transfer がスムーズになります。
 
-**Important:**
+**重要:**
 
-* ⚠️ Always run `sync` **before and after** transfers or withdrawals for the best experience.
+* ⚠️ 最良のエクスペリエンスのために、Transfer や Withdrawal の **前後** で必ず `sync` を実行してください。
 
-#### Transfer Example
+#### Transfer の例
 
 ```ts
 await client.sync();
@@ -257,7 +262,7 @@ const transferConfirmation = await client.waitForTransactionConfirmation(transfe
 await client.sync();
 ```
 
-#### Withdrawal Example
+#### Withdrawal の例
 
 ```ts
 await client.sync();
@@ -265,4 +270,4 @@ const withdrawResult = await client.withdraw(params);
 await client.sync();
 ```
 
-**NOTE**: In the **frontend**, The `sync` function should not be called manually in normal use.
+**注意**: **フロントエンド** では、通常の使用時に `sync` 関数を手動で呼び出す必要はありません。

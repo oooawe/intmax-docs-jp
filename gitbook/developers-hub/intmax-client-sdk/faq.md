@@ -1,41 +1,46 @@
+---
+icon: comments-question-check
+description: INTMAX Client SDK のよくある質問と回答
+---
+
 # FAQ
 
-A collection of frequently asked questions and answers about the INTMAX Client SDK. This page provides explanations for common developer inquiries regarding account management, fees, transactions, security, privacy, and more.
+INTMAX Client SDK に関するよくある質問とその回答をまとめたページです。アカウント管理、手数料、トランザクション、セキュリティ、プライバシーなど、開発者からの一般的な問い合わせに対する説明を提供します。
 
-### Q. Does the INTMAX network support smart contracts?
+### Q. INTMAX ネットワークはスマートコントラクトをサポートしていますか？
 
-No, the INTMAX network does **not** support smart contracts. Instead, interaction with the network is performed through the **Client SDK**, which provides all necessary functionalities for sending transactions, managing assets, and integrating with applications.
+いいえ、INTMAX ネットワークはスマートコントラクトを **サポートしていません**。代わりに、**Client SDK** を通じてネットワークとの連携を行います。SDK は、トランザクションの送信、資産管理、アプリケーション統合に必要なすべての機能を提供します。
 
-### Q. What is “Login” in the context of the INTMAX network?
+### Q. INTMAX ネットワークにおける「ログイン」とは何ですか？
 
-**Login** is the process of generating an INTMAX address from a given Ethereum account. INTMAX addresses use a different signature scheme from typical EVM chains. Access is performed through an EVM-compatible wallet application in a browser.
+**ログイン** は、指定された Ethereum アカウントから INTMAX アドレスを生成するプロセスです。INTMAX アドレスは、一般的な EVM チェーンとは異なる署名スキームを使用します。ブラウザ上で EVM 互換のウォレットアプリケーションを通じてアクセスします。
 
-### Q. Are an Ethereum address and an INTMAX address the same?
+### Q. Ethereum アドレスと INTMAX アドレスは同じですか？
 
-No, they are distinct. For more details, please refer [Account System](./overview#account-system).
+いいえ、異なるものです。詳細は [アカウントシステム](./overview#account-system) を参照してください。
 
-### Q. How are transaction fees determined on the INTMAX network?
+### Q. INTMAX ネットワークの手数料はどのように決まりますか？
 
-Transaction fees on the INTMAX network apply in the following cases:
+INTMAX ネットワークの手数料は以下の場合に発生します：
 
-- Transfers within the INTMAX network
-- Withdrawals from INTMAX to Ethereum
-- Claiming mining rewards
+- INTMAX ネットワーク内での Transfer
+- INTMAX から Ethereum への Withdrawal
+- マイニングリワードの Claim
 
-Currently, the SDK does not handle mining. Thus, the fee structure explained here applies only to transfers and withdrawals on the network.
+現在、SDK はマイニングを扱いません。そのため、ここで説明する手数料体系は、ネットワーク上の Transfer と Withdrawal にのみ適用されます。
 
-- Transfer Fees:
-  - First transaction: **2,250 - 2,500 Gwei**
-  - Subsequent transactions: **1,800 - 2,000 Gwei**
-- Withdrawal Fee: **32,500 Gwei**
+- Transfer 手数料:
+  - 初回トランザクション: **2,250 - 2,500 Gwei**
+  - 2 回目以降のトランザクション: **1,800 - 2,000 Gwei**
+- Withdrawal 手数料: **32,500 Gwei**
 
-### Q. What happens to transaction fees when multiple transactions are batched together?
+### Q. 複数のトランザクションをバッチ処理した場合、手数料はどうなりますか？
 
-Even when many transactions (for example, 63 transactions) are batched together into a single block, each individual transaction maintains the same fee structure.
+多数のトランザクション（例えば 63 件）を 1 つのブロックにバッチ処理した場合でも、個々のトランザクションの手数料体系は同じです。
 
-### Q. How do we use the return value of `broadcastTransaction` and `withdraw`?
+### Q. `broadcastTransaction` と `withdraw` の戻り値はどう使いますか？
 
-The `broadcastTransaction` and `withdraw` function returns a response like this:
+`broadcastTransaction` と `withdraw` 関数は以下のようなレスポンスを返します：
 
 ```json
 {
@@ -47,74 +52,74 @@ The `broadcastTransaction` and `withdraw` function returns a response like this:
 }
 ```
 
-This return value will be used with a function called `waitForTransactionConfirmation`. This function will allow you to wait until the transaction is confirmed.
-For more details, please refer to [the waitForTransactionConfirmation section in the API Reference](./api-reference#waitfortransactionconfirmation).
+この戻り値は `waitForTransactionConfirmation` 関数で使用します。この関数により、トランザクションが確認されるまで待機できます。
+詳細は [API リファレンスの waitForTransactionConfirmation セクション](./api-reference#waitfortransactionconfirmation) を参照してください。
 
 ```ts
 const transferConfirmation = await client.waitForTransactionConfirmation({ txTreeRoot });
 ```
 
-### Q. What is the collateral fee?
+### Q. コラテラル手数料とは何ですか？
 
-**The collateral fee** is a fee introduced by the Block Builder to protect against spam attacks from users.
+**コラテラル手数料（collateral fee）** は、ユーザーからのスパム攻撃を防ぐために Block Builder が導入した手数料です。
 
-If the user cancels a transfer midway, the fee specified as the collateral fee is charged. If the transfer is completed without being canceled, the collateral fee is not used.
+ユーザーが Transfer を途中でキャンセルした場合、コラテラル手数料として指定された金額が課金されます。Transfer がキャンセルされずに完了した場合、コラテラル手数料は使用されません。
 
-The collateral fee is typically set to be 2 to 10 times higher than the regular transaction fee. To initiate a transfer, the user must have a balance greater than or equal to the larger of the two: the regular fee or the collateral fee.
+コラテラル手数料は通常、通常の手数料の 2〜10 倍に設定されます。Transfer を開始するには、通常手数料またはコラテラル手数料のいずれか大きい方以上の残高が必要です。
 
-### Q. What is the difference between a transfer and a transaction?
+### Q. Transfer とトランザクションの違いは何ですか？
 
-On the INTMAX network, a **transfer** refers to the movement of tokens from one sender specifically to a single recipient. In contrast, a **transaction** bundles multiple transfers originating from the same sender into one grouped operation, enabling multiple recipients to receive tokens simultaneously.
+INTMAX ネットワークでは、**Transfer** は 1 人の送信者から特定の 1 人の受取人へのトークン移動を指します。一方、**トランザクション** は同じ送信者から発信された複数の Transfer を 1 つのグループ操作にまとめたもので、複数の受取人が同時にトークンを受け取れます。
 
-### Q. What is `claimWithdrawal`?
+### Q. `claimWithdrawal` とは何ですか？
 
-There are two types of withdrawals: one for **native tokens** and one for **non-native tokens**.
+Withdrawal には **ネイティブトークン** と **非ネイティブトークン** の 2 種類があります。
 
-- For **native tokens**, calling `withdraw` is enough—the tokens are sent directly to the specified address.
-- For **non-native tokens**, after calling `withdraw`, the withdrawal status becomes `NeedToClaim`. In this case, you must explicitly call `claimWithdrawal` to complete the process.
+- **ネイティブトークン** の場合、`withdraw` を呼び出すだけで十分です。トークンは指定されたアドレスに直接送信されます。
+- **非ネイティブトークン** の場合、`withdraw` を呼び出した後、Withdrawal ステータスが `NeedToClaim` になります。この場合、プロセスを完了するために `claimWithdrawal` を明示的に呼び出す必要があります。
 
-You can also batch multiple pending withdrawals and claim them together using `claimWithdrawal`.
+複数の保留中の Withdrawal をバッチ処理し、`claimWithdrawal` でまとめて Claim することもできます。
 
-### Q. What are `tokenList` and `tokenBalances`?
+### Q. `tokenList` と `tokenBalances` とは何ですか？
 
-- `tokenList` is a list of tokens that exist on the INTMAX network.
+- `tokenList` は、INTMAX ネットワーク上に存在するトークンの一覧です。
 
-  Any token that has ever been deposited into the INTMAX network is indexed and assigned a unique `tokenIndex` ID.
+  INTMAX ネットワークに一度でも Deposit されたトークンはインデックス化され、一意の `tokenIndex` ID が割り当てられます。
 
-- `tokenBalances` represents all token types held by a specific address, along with the balance of each token.
+- `tokenBalances` は、特定のアドレスが保有するすべてのトークンタイプと、各トークンの残高を表します。
 
-### Q. What does privacy mean in INTMAX?
+### Q. INTMAX におけるプライバシーとは何を意味しますか？
 
-INTMAX is designed with strong privacy protection. Only the owner of a wallet can view their asset balances and transaction history. This means that without the private key of a specific address, no one—not even network participants—can access this information.
+INTMAX は強力なプライバシー保護を前提に設計されています。ウォレットオーナーのみが自身の資産残高とトランザクション履歴を閲覧できます。つまり、特定のアドレスの秘密鍵（Private Key）がなければ、ネットワーク参加者を含め、誰もこの情報にアクセスできません。
 
-### Q. Why does the `broadcastTransaction` function take a noticeable amount of time to complete?
+### Q. `broadcastTransaction` 関数の実行に時間がかかるのはなぜですか？
 
-Operations such as sending or withdrawing funds must verify whether they can be executed based on the user's current and correct balance. Because the system needs to wait until the validity of the latest block is verified, the `broadcastTransaction` function requires a certain amount of time to complete.
-In the case of withdrawals, after broadcasting the transaction, it is necessary to synchronize the balance again to ensure it reflects the latest state. This step is required because an additional request must be sent to the node to complete the withdrawal process.
+送金や Withdrawal などの操作では、ユーザーの現在の正確な残高に基づいて実行可能かどうかを検証する必要があります。最新ブロックの有効性が検証されるまで待つ必要があるため、`broadcastTransaction` 関数には一定の時間がかかります。
+Withdrawal の場合、トランザクションのブロードキャスト後に、最新の状態を反映するために残高を再同期する必要があります。これは、Withdrawal プロセスを完了するためにノードへの追加リクエストが必要なためです。
 
-In the server-sdk, you can shorten the execution time of the `broadcastTransaction` and `withdraw` functions by completing the balance synchronization in advance using the `sync` function. For more details, please refer to [the NodeJS example](examples#notes-for-using-nodejs).
+server-sdk では、`sync` 関数を使って事前に残高同期を完了しておくことで、`broadcastTransaction` と `withdraw` 関数の実行時間を短縮できます。詳細は [Node.js の使用例](examples#notes-for-using-nodejs) を参照してください。
 
-The approximate execution time for each function is as follows.
-Please note that the duration may increase further when the network is congested.
+各関数のおおよその実行時間は以下の通りです。
+ネットワークの混雑時にはさらに時間がかかる場合があります。
 
-## Mainnet
+## メインネット
 
-| Operation                                       | Time (s) |
+| 操作 | 時間（秒） |
 | ----------------------------------------------- | -------- |
-| broadcastTransaction (before sync)              | 164      |
-| broadcastTransaction (after sync)               | 23       |
-| waitForTransactionConfirmation (after transfer) | 50       |
-| withdraw (before sync)                          | 302      |
-| withdraw (after sync)                           | 187      |
-| sync (after transfer)                           | 139      |
+| broadcastTransaction（sync 前） | 164 |
+| broadcastTransaction（sync 後） | 23 |
+| waitForTransactionConfirmation（Transfer 後） | 50 |
+| withdraw（sync 前） | 302 |
+| withdraw（sync 後） | 187 |
+| sync（Transfer 後） | 139 |
 
-## Testnet
+## テストネット
 
-| Operation                                       | Time (s) |
+| 操作 | 時間（秒） |
 | ----------------------------------------------- | -------- |
-| broadcastTransaction (before sync)              | 256      |
-| broadcastTransaction (after sync)               | 52       |
-| waitForTransactionConfirmation (after transfer) | 50       |
-| withdraw (before sync)                          | 472      |
-| withdraw (after sync)                           | 257      |
-| sync (after transfer)                           | 216      |
+| broadcastTransaction（sync 前） | 256 |
+| broadcastTransaction（sync 後） | 52 |
+| waitForTransactionConfirmation（Transfer 後） | 50 |
+| withdraw（sync 前） | 472 |
+| withdraw（sync 後） | 257 |
+| sync（Transfer 後） | 216 |
