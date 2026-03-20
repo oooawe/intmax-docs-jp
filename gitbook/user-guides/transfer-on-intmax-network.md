@@ -1,5 +1,5 @@
 ---
-icon: circle-play
+icon: right-left
 description: INTMAX Network 上でのトークン Transfer 手順
 ---
 

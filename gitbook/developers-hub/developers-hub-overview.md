@@ -1,5 +1,5 @@
 ---
-icon: bookmark
+icon: compass
 description: Developers Hub の概要と各セクションへのナビゲーション
 ---
 

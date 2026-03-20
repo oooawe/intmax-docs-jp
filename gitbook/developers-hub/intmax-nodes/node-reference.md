@@ -1,5 +1,5 @@
 ---
-icon: users-gear
+icon: book-open
 description: INTMAX ネットワークを構成するノード・コントラクト・UI の全体像
 ---
 

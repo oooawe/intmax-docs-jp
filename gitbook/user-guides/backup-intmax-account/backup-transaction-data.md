@@ -1,5 +1,5 @@
 ---
-icon: cloud-arrow-up
+icon: floppy-disk
 description: トランザクションデータのバックアップ種類と手順
 ---
 

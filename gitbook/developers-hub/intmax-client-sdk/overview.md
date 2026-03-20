@@ -1,5 +1,5 @@
 ---
-icon: rocket
+icon: book-open-reader
 description: INTMAX Client SDK の概要とアーキテクチャ、基本コンセプト
 ---
 

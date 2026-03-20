@@ -1,5 +1,5 @@
 ---
-icon: cubes
+icon: briefcase
 description: Block Builder の役割・リワード設計・運用コストと参加方法のビジネスガイド
 ---
 

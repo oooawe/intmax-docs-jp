@@ -1,5 +1,5 @@
 ---
-icon: circle-play
+icon: arrow-right-to-bracket
 description: INTMAX Network へのトークン Deposit 手順
 ---
 

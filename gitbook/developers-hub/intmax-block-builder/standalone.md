@@ -1,5 +1,5 @@
 ---
-icon: cubes
+icon: cube
 description: Standalone モードでの Block Builder セットアップと運用手順
 ---
 

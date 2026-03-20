@@ -1,5 +1,5 @@
 ---
-icon: book
+icon: link
 description: INTMAX WalletSDK の GitHub リポジトリ・デモ・npm パッケージへのリンク集
 ---
 

@@ -1,5 +1,5 @@
 ---
-icon: circle-play
+icon: arrow-right-from-bracket
 description: INTMAX Network からのトークン Withdrawal 手順
 ---
 

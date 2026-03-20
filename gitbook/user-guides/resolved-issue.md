@@ -1,5 +1,5 @@
 ---
-icon: triangle-exclamation
+icon: circle-check
 description: 解決済みの既知の問題と復旧手順
 ---
 

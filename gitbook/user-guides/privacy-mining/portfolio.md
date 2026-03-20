@@ -1,5 +1,5 @@
 ---
-icon: pickaxe
+icon: chart-pie
 description: Privacy Mining のポートフォリオ確認方法
 ---
 

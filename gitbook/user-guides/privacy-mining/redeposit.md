@@ -1,5 +1,5 @@
 ---
-icon: pickaxe
+icon: rotate
 description: Privacy Mining の Redeposit 手順
 ---
 

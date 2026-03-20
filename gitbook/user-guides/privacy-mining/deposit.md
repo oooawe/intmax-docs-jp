@@ -1,5 +1,5 @@
 ---
-icon: pickaxe
+icon: arrow-right-to-bracket
 description: Privacy Mining への Deposit 手順
 ---
 

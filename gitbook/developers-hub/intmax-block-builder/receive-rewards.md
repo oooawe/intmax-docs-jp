@@ -1,5 +1,5 @@
 ---
-icon: cubes
+icon: coins
 description: Block Builder のユーザー手数料と ITX トークンリワードの受取手順
 ---
 

@@ -1,5 +1,5 @@
 ---
-icon: bookmark
+icon: compass
 description: INTMAX Network の概要と各セクションへのナビゲーション
 ---
 

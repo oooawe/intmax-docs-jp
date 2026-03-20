@@ -1,5 +1,5 @@
 ---
-icon: pickaxe
+icon: gear
 description: Privacy Mining のその他の機能
 ---
 

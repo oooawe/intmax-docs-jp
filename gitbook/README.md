@@ -1,6 +1,6 @@
 ---
-icon: info
-description:  本ドキュメントは [INTMAX 公式ドキュメント](https://docs.network.intmax.io) の非公式日本語訳です。正確な情報は必ず原文を参照ください
+icon: book
+description:  本ドキュメントは INTMAX公式ドキュメント（https://docs.network.intmax.io）を日本語翻訳したものです。正確な情報確認は必ず原文を参照ください
 ---
 
 # Introduction
@@ -8,8 +8,8 @@ description:  本ドキュメントは [INTMAX 公式ドキュメント](https:/
 
 ## What is INTMAX?
 
-{% hint style="success" icon="dna" %}
-INTMAXとは、ゼロ知識証明（ZKP）とステートレスアーキテクチャを採用し、スケーラビリティとプライバシーを両立する Ethereum のレイヤー2プロトコルです
+{% hint style="success" %}
+INTMAXとは、ゼロ知識証明（ZKP）とステートレスアーキテクチャを採用し、スケーラビリティとプライバシーを両立する Ethereum のレイヤー2プロトコル
 {% endhint %}
 
 
@@ -45,7 +45,7 @@ INTMAX の思想は、Cypherpunk の理念 — 暗号技術によって個人の
 ## このドキュメントについて
 
 | 項目      | 内容 |
-| ------- | ------------------------------------------------------------------------------------- |
+| ------- | ----------------------------------------------------- |
 | 原文      | [INTMAX Documentation](https://docs.network.intmax.io)                                |
 | 原文リポジトリ | [InternetMaximalism/intmax2-docs](https://github.com/InternetMaximalism/intmax2-docs) |
 | 翻訳の基準時点 | 2026年1月時点の原文 |

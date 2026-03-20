@@ -1,5 +1,5 @@
 ---
-icon: timeline-arrow
+icon: arrows-spin
 description: Deposit・Transfer・Withdrawal の全体フロー
 ---
 

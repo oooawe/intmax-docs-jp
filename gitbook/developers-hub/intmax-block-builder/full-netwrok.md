@@ -1,5 +1,5 @@
 ---
-icon: cubes
+icon: network-wired
 description: Full Network モードでの Block Builder セットアップと運用手順
 ---
 

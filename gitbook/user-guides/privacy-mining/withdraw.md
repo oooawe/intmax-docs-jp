@@ -1,5 +1,5 @@
 ---
-icon: pickaxe
+icon: arrow-right-from-bracket
 description: Privacy Mining からの Withdraw 手順
 ---
 

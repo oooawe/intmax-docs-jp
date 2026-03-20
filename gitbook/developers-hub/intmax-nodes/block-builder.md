@@ -1,5 +1,5 @@
 ---
-icon: cubes
+icon: cube
 description: Block Builder の役割とトランザクション集約・ブロック生成の仕組み
 ---
 
