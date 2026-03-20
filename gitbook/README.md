@@ -3,7 +3,7 @@ icon: book
 description:  本ドキュメントは INTMAX公式ドキュメント（https://docs.network.intmax.io）を日本語翻訳したものです。正確な情報確認は必ず原文を参照ください
 ---
 
-# Introduction
+# はじめに
 
 
 ## What is INTMAX?
@@ -51,6 +51,3 @@ INTMAX の思想は、Cypherpunk の理念 — 暗号技術によって個人の
 | 翻訳の基準時点 | 2026年1月時点の原文 |
 | 翻訳リポジトリ| [oooawe/intmax-docs-ja](https://github.com/oooawe/intmax-docs-ja) |
 | ライセンス   | MIT（原文に準拠） |
-
-
-

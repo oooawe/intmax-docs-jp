@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gitbook-docs": {
+      "type": "url",
+      "url": "https://gitbook.com/docs/~gitbook/mcp"
+    }
+  }
+}
