@@ -8,7 +8,7 @@ description:  本ドキュメントは [INTMAX 公式ドキュメント](https:/
 ## INTMAX とは
 
 {% hint style="success" icon="dna" %}
-INTMAX は、ゼロ知識証明（ZKP）とステートレスアーキテクチャを採用し、スケーラビリティとプライバシーを両立する Ethereum のレイヤー2プロトコルです
+INTMAX は、ゼロ知識証明（ZKP）とステートレスアーキテクチャを採用し、スケーラビリティとプライバシーを両立する Ethereum のレイヤー2プロトコル
 {% endhint %}
 
 ### ステートレスという選択
