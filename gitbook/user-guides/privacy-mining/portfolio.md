@@ -7,11 +7,11 @@ description: Privacy Mining のポートフォリオ確認方法
 
 マイニングポートフォリオでは、アカウントに紐づくすべてのアクティブなマイニングアクティビティと過去のマイニングセッションを一覧で確認できます。Deposit、リワード、マイニング全体のパフォーマンスを一か所で追跡できます。
 
-![Mining Portfolio](assets/user-guides/portfolio_10.webp)
+![Mining Portfolio](../../assets/user-guides/portfolio_10.webp)
 
 アカウントでマイニングアクティビティが行われていない場合、ポートフォリオは空で表示されます。マイニングが開始されると、アクティブなセッションと進行中のアクティビティが表示されます。
 
-![Mining Portfolio](assets/user-guides/portfolio_20.webp)
+![Mining Portfolio](../../assets/user-guides/portfolio_20.webp)
 
 ## マイニングステータス
 
@@ -23,10 +23,10 @@ description: Privacy Mining のポートフォリオ確認方法
 - **Ready to Claim** — マイニングリワードの Claim が可能な状態
 - **Completed** — マイニングリワードの Claim が正常に完了した状態（ただし、Redeposit はまだ完了していない場合があります）
 
-<figure>
+<div align="center">
   <img src="assets/user-guides/portfolio_30.webp" alt="Mining Portfolio" />
   <img src="assets/user-guides/portfolio_40.webp" alt="Mining Portfolio" />
-</figure>
+</div>
 
 ## 補足事項
 

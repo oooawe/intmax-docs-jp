@@ -7,7 +7,7 @@ description: トランザクション履歴の確認方法
 
 このページでは、トランザクション履歴を確認できます。
 
-![Check Transaction History](assets/user-guides/check_transaction_history.webp)
+![Check Transaction History](../assets/user-guides/check_transaction_history.webp)
 
 ## トランザクション履歴の概要
 
