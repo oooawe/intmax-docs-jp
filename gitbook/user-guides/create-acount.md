@@ -23,13 +23,13 @@ INTMAX アカウントのアドレスは、同じ Ethereum アドレスから作
 
    INTMAX の Web ページにアクセスし、「Connect Wallet」ボタンをクリックして接続を開始します。
 
-   ![Mining Page](assets/user-guides/how_to_create_account_of_intmax_network_10.webp)
+   ![Mining Page](../assets/user-guides/how_to_create_account_of_intmax_network_10.webp)
 
 2. **使用するウォレットを選択**
 
    「Connect Wallet」ボタンをクリックすると、対応ウォレットの一覧がポップアップで表示されます。一覧からお使いのウォレットを選択してください。スムーズに利用するため、[公式に対応しているウォレット](supported-wallets)であることをご確認ください。
 
-   ![Connect wallet](assets/user-guides/how_to_create_account_of_intmax_network_20.webp)
+   ![Connect wallet](../assets/user-guides/how_to_create_account_of_intmax_network_20.webp)
 
 3. **2〜3 回の署名を実行**
 
@@ -37,10 +37,10 @@ INTMAX アカウントのアドレスは、同じ Ethereum アドレスから作
 
    **注意**：3 回目の署名は、そのアドレスでの初回ログイン時かつ対応していないウォレットを使用している場合にのみ必要です。
 
-   <figure>
+   <div align="center">
       <img src="assets/user-guides/how_to_create_account_of_intmax_network_40.webp" alt="Sign messages" />
       <img src="assets/user-guides/how_to_create_account_of_intmax_network_50.webp" alt="Sign messages" />
-   </figure>
+   </div>
 
 4. **INTMAX アカウントの生成**
 
@@ -55,9 +55,9 @@ INTMAX アカウントのアドレスは、同じ Ethereum アドレスから作
    1. 画面右上に表示されている Ethereum ウォレットアドレスをクリック
    2. ポップアップウィンドウが表示され、Ethereum アドレスと INTMAX アドレスの両方が確認できます
 
-   <figure>
+   <div align="center">
       <img src="assets/user-guides/how_to_create_account_of_intmax_network_60.webp" alt="View INTMAX address" />
       <img src="assets/user-guides/how_to_create_account_of_intmax_network_70.webp" alt="View INTMAX address" />
-   </figure>
+   </div>
 
 この方法により、INTMAX アカウントの詳細にいつでも簡単にアクセスして確認できます。

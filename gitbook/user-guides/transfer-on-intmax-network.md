@@ -19,28 +19,28 @@ Send ページでは、INTMAX 上のトークンを他のユーザーに Transfe
 
    トークンを送りたい相手の INTMAX アドレスを貼り付けます。
 
-![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_10.webp)
+![Transfer on INTMAX Network](../assets/user-guides/transfer_on_intmax_network_10.webp)
 
 3. **宛先の追加（任意）**
 
    複数の宛先にトークンを送信したい場合は、「Add」ボタンをクリックして送信先を追加します。
 
-![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_20.webp)
+![Transfer on INTMAX Network](../assets/user-guides/transfer_on_intmax_network_20.webp)
 
 4. **「Send」ボタンをクリック**
 
    すべての宛先と金額を指定したら、「Send」ボタンをクリックします。
 
-![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_30.webp)
+![Transfer on INTMAX Network](../assets/user-guides/transfer_on_intmax_network_30.webp)
 
 5. **トランザクション内容の確認**
 
    確認ページで詳細を確認し、問題がなければ再度「Send」ボタンをクリックして実行します。
 
-![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_40.webp)
+![Transfer on INTMAX Network](../assets/user-guides/transfer_on_intmax_network_40.webp)
 
 6. **処理の完了を待つ**
 
    トランザクション処理中は、最初の 1 分間はブラウザを閉じないでください。処理が完了すると、トークンの送信は正常に完了しています。
 
-![Transfer on INTMAX Network](assets/user-guides/transfer_on_intmax_network_50.webp)
+![Transfer on INTMAX Network](../assets/user-guides/transfer_on_intmax_network_50.webp)

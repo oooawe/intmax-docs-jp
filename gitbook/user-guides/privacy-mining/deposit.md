@@ -7,23 +7,23 @@ description: Privacy Mining への Deposit 手順
 
 Deposit とは、Ethereum メインネットから INTMAX Network へ資金を移動する操作です。Deposit は 0.1、1、10、100 ETH のいずれかの固定金額で行う必要があります。希望の金額を選択し、「Mine」ボタンをクリックするだけで開始できます。
 
-![Select Deposit Amount](assets/user-guides/deposit_10.webp)
+![Select Deposit Amount](../../assets/user-guides/deposit_10.webp)
 
 次に、Deposit の確認画面が表示されます。一度 Deposit すると、指定されたロック期間（Lock Period）が経過するまで資金はロックされ、アクセスできなくなります。ロック期間が終了するまで資金を維持してください。
 
-![Confirm Deposit](assets/user-guides/deposit_20.webp)
+![Confirm Deposit](../../assets/user-guides/deposit_20.webp)
 
 トランザクションを開始した後、最初の 15 秒間はブラウザウィンドウを開いたままにしてください。これにより、トランザクションが INTMAX Network と正常に通信し、処理フェーズがスムーズに開始されます。
 
-![Processing Deposit](assets/user-guides/deposit_30.webp)
+![Processing Deposit](../../assets/user-guides/deposit_30.webp)
 
 ほとんどのトランザクションはそれより早く完了しますが、INTMAX ブロックチェーン上での完全な確認と処理には最大 30 分かかる場合があります。トランザクションが完全に確認されると、マイニングが自動的に開始されます。
 
-![Deposit Successful](assets/user-guides/deposit_40.webp)
+![Deposit Successful](../../assets/user-guides/deposit_40.webp)
 
 マイニングの進捗状況や詳細なパフォーマンス指標を確認するには、マイニングポートフォリオセクションにアクセスしてください。このダッシュボードでは、マイニングのアクティビティ、ステータスの更新、その他の関連情報を確認できます。
 
-![Mining Portfolio](assets/user-guides/deposit_50.webp)
+![Mining Portfolio](../../assets/user-guides/deposit_50.webp)
 
 ## 補足事項
 
