@@ -20,7 +20,7 @@ description: INTMAX ネットワークを構成するノード・コントラク
 
 ### 概念図
 
-<div align="center" data-with-frame="true"><img src="../../assets/developers-hub/node.webp" alt="概念図" width="75%"></div>
+<div align="center" data-with-frame="true"><img src="../../assets/developers-hub/node.png" alt="概念図" width="75%"></div>
 
 ## 主な機能
 
