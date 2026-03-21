@@ -1,5 +1,5 @@
 ---
-icon: book-open-reader
+icon: book-bookmark
 description:  本ドキュメントは INTMAX公式ドキュメント（https://docs.network.intmax.io）を日本語翻訳したものです。情報確認の際は必ず原文を参照ください
 ---
 

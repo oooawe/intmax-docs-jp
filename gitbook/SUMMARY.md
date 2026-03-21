@@ -1,6 +1,6 @@
 # Table of contents
 
-* [INTMAX 日本語ドキュメント](README.md)
+* [はじめに](README.md)
 * [コミュニティ](community.md)
 
 ## ユーザーガイド
