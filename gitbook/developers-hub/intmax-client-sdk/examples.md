@@ -236,7 +236,7 @@ const claim = await client.claimWithdrawal(withdrawals.need_claim);
 console.log("Claim result:", claim);
 ```
 
-### Node.js 使用時の注意事項
+### Node.js 使用時の注意事項 {#notes-for-using-nodejs}
 
 server-sdk を使用する場合、`broadcastTransaction` と `withdraw` 関数の呼び出し前後に `sync` 関数を実行することを推奨します。
 

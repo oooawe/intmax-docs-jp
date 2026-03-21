@@ -27,7 +27,7 @@ INTMAX アカウントのアドレスは、同じ Ethereum アドレスから作
 
 2. **使用するウォレットを選択**
 
-   「Connect Wallet」ボタンをクリックすると、対応ウォレットの一覧がポップアップで表示されます。一覧からお使いのウォレットを選択してください。スムーズに利用するため、[公式に対応しているウォレット](supported-wallets)であることをご確認ください。
+   「Connect Wallet」ボタンをクリックすると、対応ウォレットの一覧がポップアップで表示されます。一覧からお使いのウォレットを選択してください。スムーズに利用するため、[公式に対応しているウォレット](./supported-wallets/index.md)であることをご確認ください。
 
    <div align="center" data-with-frame="true"><img src="../assets/user-guides/how_to_create_account_of_intmax_network_20.png" alt="Connect wallet" width="75%"></div>
 

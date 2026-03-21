@@ -23,7 +23,7 @@ Block Builder は、秘密鍵（Private Key）で指定された Ethereum アカ
   - Block Builder はトランザクションごとにユーザーあたり $0.005 の手数料を収集します。
   - 1ブロックあたり最大 $0.005 × 128 の手数料を蓄積でき、スケーラブルでインセンティブのある運用を支えます。
 - **オンラインステータスの通知：**
-  - Block Builder は1日1回、[**Block Builder Registry Contract**](/developers-hub/intmax-nodes/smart-contracts#block-builder-registry) にトランザクションを送信して、[**Indexer**](/developers-hub/intmax-nodes/indexer) にオンラインであることを通知します。
+  - Block Builder は1日1回、[**Block Builder Registry Contract**](../intmax-nodes/smart-contracts.md#block-builder-registry) にトランザクションを送信して、[**Indexer**](../intmax-nodes/indexer.md) にオンラインであることを通知します。
   - Indexer は最適な Block Builder の URL をユーザーに配信する重要な役割を担っており、効率的で信頼性の高いネットワークインタラクションを確保します。
 
 ## 要件
@@ -273,7 +273,7 @@ Block Builder を安定して運用するには、**最低 0.01 ETH を Deposit 
 
 **推奨される残高管理：**
 
-- 目安として、アカウントに**常に 0.01 ETH 以上**を維持してください
+- 目安として、アカウントに **常に 0.01 ETH 以上**を維持してください
 - **残高が 0.002 ETH を下回った場合**、できるだけ早くチャージしてください
 - **残高が 0.001 ETH を下回った場合**、ブロック送信が失敗するため、定期的な残高確認と適時のチャージを強く推奨します
 
@@ -304,7 +304,7 @@ Standalone モードでは：
 
 - 各 Block Builder は独立して動作し、異なるクラウド環境にデプロイできます
 - 各 Block Builder が Indexer からアクセス可能になるよう、ネットワークアクセス（ファイアウォールルール、ポート、リバースプロキシなど）の設定はご自身で行う必要があります
-- Indexer は**パブリックにアクセス可能な** Block Builder の URL のみを登録します
+- Indexer は **パブリックにアクセス可能な** Block Builder の URL のみを登録します
 
 このモードは複数の Builder を並行運用するのに適しており、それぞれ異なる URL で登録できます。
 
@@ -353,7 +353,7 @@ Standalone モードでは：
    💡 Run: docker swarm init
    ```
 
-   これは**マシン上で Docker Swarm モードが初期化されていない**ことを意味します。
+   これは **マシン上で Docker Swarm モードが初期化されていない**ことを意味します。
    - Docker Swarm は `docker stack deploy` の使用やスタック内で定義されたサービスの管理に必要です。
 
 ## リファレンス

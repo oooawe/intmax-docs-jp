@@ -24,7 +24,7 @@ description: Block Builder のユーザー手数料と ITX トークンリワー
 
 ### 準備
 
-コマンドラインツールを使用してリワードを Claim できます。以下は**メインネット**でのリワード Claim 方法の説明です。
+コマンドラインツールを使用してリワードを Claim できます。以下は **メインネット**でのリワード Claim 方法の説明です。
 
 ```bash
 git clone git@github.com:InternetMaximalism/intmax2.git -b main

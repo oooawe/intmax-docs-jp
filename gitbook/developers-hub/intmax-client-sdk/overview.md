@@ -102,7 +102,7 @@ Ethereum Mainnet
 
 ## 基本コンセプト
 
-### アカウントシステム
+### アカウントシステム {#account-system}
 
 INTMAX は Ethereum とは異なる独自のアドレス形式を使用します。
 
