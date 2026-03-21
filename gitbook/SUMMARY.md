@@ -7,7 +7,7 @@
 
 * [ユーザーガイド概要](user-guides/intro.md)
 * [INTMAX アカウントの作成](user-guides/create-acount.md)
-* [対応ウォレット](user-guides/supported-wallets/index.md)
+* [対応ウォレット](user-guides/supported-wallets/README.md)
   * [Bitget Wallet](user-guides/supported-wallets/bitget-wallet-ios-app.md)
   * [Rabby Wallet](user-guides/supported-wallets/rabby-wallet.md)
   * [Trust Wallet](user-guides/supported-wallets/trust-wallet.md)
