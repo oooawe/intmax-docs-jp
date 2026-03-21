@@ -7,7 +7,9 @@ description: トランザクション履歴の確認方法
 
 このページでは、トランザクション履歴を確認できます。
 
-<div align="center" data-with-frame="true"><img src="../assets/user-guides/check_transaction_history.png" alt="Check Transaction History" width="75%"></div>
+<div align="center" data-with-frame="true">
+<img src="../assets/user-guides/check_transaction_history.png" alt="Check Transaction History" width="75%">
+</div>
 
 ## トランザクション履歴の概要
 
@@ -28,5 +30,8 @@ description: トランザクション履歴の確認方法
 - **Send** — 他の INTMAX アドレスへトークンを送信
 - **Receive** — 他の INTMAX アドレスからトークンを受信
 
-> **注意**：**マイニングのトランザクション一覧**はここには表示されません。
-> マイニング履歴は [Mining Portfolio](https://app.intmax.io/mining-portfolio) ページで確認してください。
+{% hint style="warning" %}
+**マイニングのトランザクション一覧** はここには表示されません。
+[Mining Portfolio](https://app.intmax.io/mining-portfolio) を参照ください。
+{% endhint %}
+
