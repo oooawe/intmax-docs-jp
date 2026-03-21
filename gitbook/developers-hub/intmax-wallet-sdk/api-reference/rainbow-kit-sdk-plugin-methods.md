@@ -60,7 +60,7 @@ const additionalWallets = [
 
 **結果**
 
-![Rainbow Kit SDK Plugin](../../../assets/developers-hub/rainbow-kit-sdk-plugin.webp)
+<div align="center" data-with-frame="true"><img src="../../../assets/developers-hub/rainbow-kit-sdk-plugin.webp" alt="Rainbow Kit SDK Plugin" width="75%"></div>
 
 ### `connectorsForWallets(wallets: Wallet[]): Connector[]`
 

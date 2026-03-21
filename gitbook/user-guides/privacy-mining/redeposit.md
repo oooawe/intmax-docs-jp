@@ -18,25 +18,25 @@ Redeposit 機能について、以下の点に留意してください：
 
 ### マイニングセッションの選択
 
-![Redeposit](../../assets/user-guides/redeposit_10.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_10.webp" alt="Redeposit" width="75%"></div>
 
 上の画像のマイニングポートフォリオから、「Ready to Claim」ステータスのマイニングセッションをクリックします。このステータスは、マイニング期間が経過し、資産の Withdrawal や Redeposit、およびリワードの Claim が同時に行えることを意味します。
 
 ### リワード Claim の開始
 
-![Redeposit](../../assets/user-guides/redeposit_20.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_20.webp" alt="Redeposit" width="75%"></div>
 
 上のページには Withdraw と Redeposit のオプションがあります。Redeposit をクリックして Redeposit 機能を実行します。
 
-![Redeposit](../../assets/user-guides/redeposit_30.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_30.webp" alt="Redeposit" width="75%"></div>
 
 Redeposit を進めるには、まず蓄積されたリワードを Claim する必要があります。「Proceed」をクリックして続行します。
 
-![Redeposit](../../assets/user-guides/redeposit_40.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_40.webp" alt="Redeposit" width="75%"></div>
 
 メッセージに署名します：
 
-![Redeposit](../../assets/user-guides/redeposit_50.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_50.webp" alt="Redeposit" width="75%"></div>
 
 この段階では、システムが残高を確認し、資金が利用可能かどうかを検証しています。約 40 秒お待ちください。画面は自動的に遷移します。
 
@@ -44,57 +44,57 @@ Redeposit を進めるには、まず蓄積されたリワードを Claim する
 
 ### ガス代の補充
 
-![Redeposit](../../assets/user-guides/redeposit_60.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_60.webp" alt="Redeposit" width="75%"></div>
 
 資金が利用可能であることが確認されました。Redeposit トランザクションに必要なガス代を補充します。
 
 **注意**：ガス代の急激な変動により、2 回以上のガス補充が必要になる場合があります。
 
-![Redeposit](../../assets/user-guides/redeposit_70.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_70.webp" alt="Redeposit" width="75%"></div>
 
 ガス補充のトランザクションを確認します：
 
-![Redeposit](../../assets/user-guides/redeposit_80.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_80.webp" alt="Redeposit" width="75%"></div>
 
 トランザクションに署名します：
 
-![Redeposit](../../assets/user-guides/redeposit_90.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_90.webp" alt="Redeposit" width="75%"></div>
 
 左側のインジケーターが緑色に変わるまで、このページでお待ちください。緑色に変わるまでは、ページを閉じたり離れたりしないでください。
 
-![Redeposit](../../assets/user-guides/redeposit_110.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_110.webp" alt="Redeposit" width="75%"></div>
 
 両方のインジケーターが緑色になったら、ページを離れるか、上のボタンをクリックしてアクティブなマイニングセッションに移動できます。
 
-![Redeposit](../../assets/user-guides/redeposit_120.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_120.webp" alt="Redeposit" width="75%"></div>
 
 マイニングページに戻ると、トランザクションのステータスが「Processing fee top up」に更新されています。クリックすると詳細を確認できます。
 
 5 分以上待ってもステータスが更新されない場合は、ページを再読み込みするか、ウォレットの再接続を試してください。
 
-![Redeposit](../../assets/user-guides/redeposit_130.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_130.webp" alt="Redeposit" width="75%"></div>
 
 **注意**：この時点では、リワードの Claim と ETH の Withdrawal はまだ実行されていません。
 
 ### マイニングステータスの確認
 
-![Redeposit](../../assets/user-guides/redeposit_140.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_140.webp" alt="Redeposit" width="75%"></div>
 
 ガス代の処理が完了すると、ステータスが「Ready to Claim」に戻ります。「Ready to Claim」ステータスのマイニングセッションをクリックします。
 
-![Redeposit](../../assets/user-guides/redeposit_150.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_150.webp" alt="Redeposit" width="75%"></div>
 
 再度 Redeposit をクリックして、Redeposit アクションを実行します。
 
-![Redeposit](../../assets/user-guides/redeposit_160.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_160.webp" alt="Redeposit" width="75%"></div>
 
 Redeposit を進めるには、まず蓄積されたリワードを Claim する必要があります。「Proceed」をクリックして続行します。
 
-![Redeposit](../../assets/user-guides/redeposit_170.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_170.webp" alt="Redeposit" width="75%"></div>
 
 メッセージに署名します：
 
-![Redeposit](../../assets/user-guides/redeposit_180.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_180.webp" alt="Redeposit" width="75%"></div>
 
 この段階で、システムは再び残高を確認し、資金がまだ利用可能かどうかを検証します。約 40 秒お待ちください。画面は自動的に遷移します。
 
@@ -102,31 +102,31 @@ Redeposit を進めるには、まず蓄積されたリワードを Claim する
 
 ### ETH の Withdrawal と ITX の Claim
 
-![Redeposit](../../assets/user-guides/redeposit_190.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_190.webp" alt="Redeposit" width="75%"></div>
 
 このフォームでは、Withdrawal 先アドレスにシステムが自動生成したアドレスがあらかじめ入力されています。リワードの受取先として、接続中のウォレットアドレスが自動的に入力されています。別のアドレスを使用したい場合は、手動で変更してください。
 
-![Redeposit](../../assets/user-guides/redeposit_200.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_200.webp" alt="Redeposit" width="75%"></div>
 
 Redeposit 用の Withdrawal アドレスは、システムが Redeposit のために自動生成するため、編集できません。
 
-![Redeposit](../../assets/user-guides/redeposit_210.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_210.webp" alt="Redeposit" width="75%"></div>
 
 Withdrawal の詳細を再確認し、内容が正しいことを確認します。
 
-![Redeposit](../../assets/user-guides/redeposit_220.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_220.webp" alt="Redeposit" width="75%"></div>
 
 この画面で数分間お待ちください。
 
-![Redeposit](../../assets/user-guides/redeposit_230.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_230.webp" alt="Redeposit" width="75%"></div>
 
 トランザクションに署名します：
 
-![Redeposit](../../assets/user-guides/redeposit_240.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_240.webp" alt="Redeposit" width="75%"></div>
 
 左側のインジケーターが緑色に変わると、Withdrawal が正常に開始されたことを意味します。ページを安全に閉じることができます。「Show detailed process」をクリックすると、プロセスのステップごとの内訳とステータスを確認できます。
 
-![Redeposit](../../assets/user-guides/redeposit_250.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_250.webp" alt="Redeposit" width="75%"></div>
 
 トランザクションの完了を待つ間、このページを閉じても問題ありません。
 
@@ -136,25 +136,25 @@ Withdrawal の詳細を再確認し、内容が正しいことを確認します
 - 画面左側に表示されるトランザクションインジケーターが緑色に変わると、Withdrawal が正常に開始されたことを意味します。インジケーターが緑色になって初めて、トランザクションに影響なく Web ページを閉じることができます。
 - 資産の到着時間は資産の種類によって異なります。Withdrawal した ETH は通常、最大 11 時間以内に届きます。ITX トークンは、Withdrawal リクエストが正常に処理された翌日の UTC 00:00 に届く予定です。
 
-![Redeposit](../../assets/user-guides/redeposit_260.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_260.webp" alt="Redeposit" width="75%"></div>
 
 Withdrawal と Claim が開始されると、マイニングセッションのステータスが「Claim Processing」に更新されます。リワード（ITX トークン）は、Withdrawal リクエストが正常に処理された翌日の UTC 00:00 に届く予定です。
 
-![Redeposit](../../assets/user-guides/redeposit_270.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_270.webp" alt="Redeposit" width="75%"></div>
 
 ### 再度 Deposit する
 
 「Completed」と表示されたら、該当するマイニングセッションをクリックして、Redeposit の適格条件を満たしているか確認します。
 
-![Redeposit](../../assets/user-guides/redeposit_280.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_280.webp" alt="Redeposit" width="75%"></div>
 
 適格性が確認できたら、「Proceed Redeposit」ボタンをクリックして進みます。
 
-![Redeposit](../../assets/user-guides/redeposit_290.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_290.webp" alt="Redeposit" width="75%"></div>
 
 「Redeposit」ボタンをクリックしてアクションを確定し、トランザクションの処理を待ちます。
 
-![Redeposit](../../assets/user-guides/redeposit_300.webp)
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/redeposit_300.webp" alt="Redeposit" width="75%"></div>
 
 「Completed」と表示されたら、該当するマイニングセッションをクリックして Redeposit の適格条件を満たしているか確認します。適格性が確認できたら、「Proceed Redeposit」ボタンをクリックして進みます。
 

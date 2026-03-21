@@ -14,7 +14,7 @@ description: Privacy Mining のポートフォリオ確認方法
 アカウントでマイニングアクティビティが行われていない場合、ポートフォリオは空で表示されます。マイニングが開始されると、アクティブなセッションと進行中のアクティビティが表示されます。
 
 <figure style="opacity:.8; border:1px solid red;">
-<img src="../../assets/user-guides/portfolio_20.webp" width="75%" height="auto" alt="test">
+<div align="center" data-with-frame="true"><img src="../../assets/user-guides/portfolio_20.webp" width="75%" height="auto" alt="test"></div>
 <figcaption>Mining Portfolio2</figcaption>
 </figure>
 
@@ -28,9 +28,9 @@ description: Privacy Mining のポートフォリオ確認方法
 - **Ready to Claim** — マイニングリワードの Claim が可能な状態
 - **Completed** — マイニングリワードの Claim が正常に完了した状態（ただし、Redeposit はまだ完了していない場合があります）
 
-<div align="center">
-  <img src="assets/user-guides/portfolio_30.webp" alt="Mining Portfolio" />
-  <img src="assets/user-guides/portfolio_40.webp" alt="Mining Portfolio" />
+<div align="center" data-with-frame="true">
+  <img src="../../assets/user-guides/portfolio_30.webp" alt="Mining Portfolio" width="75%">
+  <img src="../../assets/user-guides/portfolio_40.webp" alt="Mining Portfolio" width="75%">
 </div>
 
 ## 補足事項
