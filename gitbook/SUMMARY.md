@@ -1,9 +1,10 @@
-# Table of contents
+# Summary
+
+## 📚
 
 * [はじめに](README.md)
-* [コミュニティ](community.md)
 
-## ユーザーガイド
+## INTMAX2 User Guides 
 
 * [ユーザーガイド概要](user-guides/README.md)
 * [INTMAX アカウントの作成](user-guides/create-acount.md)
@@ -44,6 +45,7 @@
   * [セキュリティ監査・テストレポート](developers-hub/security-and-privacy/security-and-testing-report.md)
   * [負荷テストレポート](developers-hub/security-and-privacy/load-testing-report.md)
 * [パフォーマンス](developers-hub/performance.md)
+
 * INTMAX Nodes
   * [ノードリファレンス](developers-hub/intmax-nodes/node-reference.md)
   * [スマートコントラクト](developers-hub/intmax-nodes/smart-contracts.md)
@@ -57,16 +59,19 @@
   * [Indexer](developers-hub/intmax-nodes/indexer.md)
   * [Validity Prover](developers-hub/intmax-nodes/validity-prover.md)
   * [Provers](developers-hub/intmax-nodes/provers.md)
+
 * Use Cases
   * [決済](developers-hub/use-cases/payments.md)
   * [マイクロトランザクションとキャッシュバックシステム](developers-hub/use-cases/microtransactions-and-cashback-systems.md)
   * [プライバシー保護アプリケーション](developers-hub/use-cases/privacy-preserving-applications.md)
+
 * INTMAX Block Builder
   * [Block Builder リファレンス](developers-hub/intmax-block-builder/block-builder-reference.md)
   * [フルネットワーク](developers-hub/intmax-block-builder/full-netwrok.md)
   * [スタンドアロン](developers-hub/intmax-block-builder/standalone.md)
   * [ビジネスガイド](developers-hub/intmax-block-builder/business-guide.md)
   * [リワードの受け取り](developers-hub/intmax-block-builder/receive-rewards.md)
+
 * INTMAX Client SDK
   * [概要](developers-hub/intmax-client-sdk/overview.md)
   * [インターフェース](developers-hub/intmax-client-sdk/interfaces.md)
@@ -76,7 +81,9 @@
   * [Vibe Coding — 汎用プロンプト集](developers-hub/intmax-client-sdk/vibe-coding-for-general-prompt.md)
   * [Vibe Coding — 開発プロンプト集](developers-hub/intmax-client-sdk/vibe-coding-for-coding-prompt.md)
   * [FAQ](developers-hub/intmax-client-sdk/faq.md)
+
 * [INTMAX CLI](developers-hub/intmax-cli.md)
+
 * INTMAX Wallet SDK
   * [Wallet SDK リファレンス](developers-hub/intmax-wallet-sdk/wallet-sdk-reference.md)
   * [インストール](developers-hub/intmax-wallet-sdk/installation.md)
@@ -105,9 +112,11 @@
     * [RainbowKit SDK プラグインメソッド](developers-hub/intmax-wallet-sdk/api-reference/rainbow-kit-sdk-plugin-methods.md)
   * [Use Cases](developers-hub/intmax-wallet-sdk/use-cases.md)
   * [リソース](developers-hub/intmax-wallet-sdk/resources.md)
+
 * [コードリポジトリ](developers-hub/code-repository.md)
 
-## リソース
+## 🧬🔗📃
 
+* [コミュニティ](community.md)
 * [ホワイトペーパー](https://eprint.iacr.org/2023/1082.pdf)
 * [Privacy Mining v2 – TL;DR](https://hackmd.io/@lionfeeder/HkNOuv9Ege)
